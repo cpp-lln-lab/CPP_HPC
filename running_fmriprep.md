@@ -5,6 +5,12 @@ https://hub.docker.com/r/nipreps/fmriprep/tags/
 
 Latest (long term support) LTS version: 20.2.7
 
+- [Running fmriprep with singularity](#running-fmriprep-with-singularity)
+  - [Example on how to run it locally](#example-on-how-to-run-it-locally)
+    - [Build singularity image](#build-singularity-image)
+    - [Set up](#set-up)
+    - [Run fmriprep](#run-fmriprep)
+
 ## Example on how to run it locally
 
 REQUIREMENTS: datalad for data source control and installing data
@@ -86,10 +92,10 @@ mkdir tmp/wdir
 Add a `bids_filter_file.json` config file to help you define what fmriprep
 should consider as `bold` as `T1w`.
 
-The one below corresponds to the fMRIprep default (also available inside this repo).
+The one below corresponds to the fMRIprep default (also available inside this
+repo).
 
-See this part of the FAQ for
-more info:
+See this part of the FAQ for more info:
 
 https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep
 
@@ -129,7 +135,42 @@ Create a `singularity_run_fmriprep.sh` script in the code folder with following
 content:
 
 ```bash
-FIXME
+#!/bin/bash
+
+# to be called from the root of the YODA dataset
+
+# subject label passed as argument
+participant_label=$1
+
+# binds the root folder of the YODA dataset on your machine
+#  onto the /my_analysis inside the container
+
+# runs the container: ~/my_images/fmriprep-${VERSION}.sing
+
+# tweak the parameters below to your convenience
+
+# see here for more info: https://fmriprep.org/en/stable/usage.html#usage-notes
+
+VERSION=21.0.2
+nb_dummy_scans=0
+task="auditory"
+
+# https://fmriprep.org/en/21.0.2/spaces.html
+output_spaces="MNI152NLin6Asym T1w"
+
+
+singularity run --cleanenv \
+        --bind "$(pwd)":/my_analysis \
+        ~/my_images/fmriprep-${VERSION}.simg \
+        /my_analysis/inputs/raw /my_analysis/derivatives \
+        participant \
+        --participant-label ${participant_label} \
+        --fs-license-file /my_analysis/code/license.txt \
+        -w /my_analysis/tmp/wdir \
+        --dummy-scans ${nb_dummy_scans} \
+        --task-id ${task} \
+        --bids-filter-file /my_analysis/code/bids_filter_file.json \
+        --output-spaces ${output_spaces}
 ```
 
 **Folder structure**
@@ -160,10 +201,13 @@ FIXME
 
 ### Run fmriprep
 
+Pass argument of the participant label.
+
+```bash
 . code/singularity_run_fmriprep.sh 01
+```
 
-
----
+<!--
 
 ```bash
 #!/bin/bash
@@ -190,4 +234,4 @@ module load singularity/3.8
 cd
 # run the fmriprep job with singularity
 singularity run --cleanenv /home/mmaclean/projects/def-flepore/mmaclean/parallel_analysis/containers/images/bids/bids-fmriprep--21.0.1.sing /home/mmaclean/projects/def-flepore/mmaclean/CVI-raw /home/mmaclean/projects/def-flepore/mmaclean/preprocessing participant --participant-label CTL17 --fs-license-file /home/mmaclean/projects/def-flepore/mmaclean/license/freesurfer.txt --skip_bids_validation --notrack
-```
+``` -->
