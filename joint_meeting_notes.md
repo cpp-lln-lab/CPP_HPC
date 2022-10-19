@@ -42,7 +42,7 @@ DICOMtoBIDS (in lab github: Iqra had issues with it)
 NB: the converters never take care of your events.tsv files : this will have to
 be done by hand.
 
-DICOM -> nifti : **dicomtonii** is the underlying converter.
+DICOM -> nifti : **dicom2nii** is the underlying converter.
 
 - One-to-one mapping : this DICOM file will become this other nii file (bidscoin
   and bidsme)
@@ -77,7 +77,7 @@ on how to use it.
 
 Because it runs on docker, it can technically be done on the cluster.
 
-fMRIprep
+## fMRIprep
 
 It is a BIDSapp so there is a classical way to use it.
 
@@ -94,7 +94,9 @@ Through docker : Everything you do on docker will be done in your terminal.
 
 For the cluster : you will use “Singularity”, quite similar overall.
 
-Docker or Singularity : they are “virtual machines” somehow, you need to tell
+Docker or Singularity ?
+
+They are “virtual machines” somehow, you need to tell
 them a certain mapping between your folders in your machine and inside the
 container (see “ \_“Mapping” folders inside the container” \_section).
 
@@ -152,7 +154,7 @@ Example of a script of fmriprep on container :
 
 [https://github.com/cpp-lln-lab/CPP_brewery/blob/master/remi/containers/code/run_fmriprep.sh](https://github.com/cpp-lln-lab/CPP_brewery/blob/master/remi/containers/code/run_fmriprep.sh)
 
-Running fmriprep / mriqc on the cluster
+### Running fmriprep / mriqc on the cluster
 
 What’s amazing is that you can just run it and do not worry about it. You can
 ask it to send you emails when the job starts/stops/crashes…
@@ -177,7 +179,7 @@ Especially this old document we have:
 
 [https://docs.google.com/document/d/1MBaaxBRUe533KBkbwmudr8cBRich7PmnRmg60xc-kV0/edit#](https://docs.google.com/document/d/1MBaaxBRUe533KBkbwmudr8cBRich7PmnRmg60xc-kV0/edit#)
 
-**<span style="text-decoration:underline;">Main steps</span>**
+#### Main steps
 
 1. From your terminal window : you want to connect with ssh name@cluster & asks
    your password (and you will need ssh keys). Now you are in your cluster
@@ -258,7 +260,7 @@ For this you put the following lines at the very top of your script
 
 **How to cancel a job : **scancel &lt;jobid>
 
-**Output files**
+##### Output files
 
 By default, the outputs go to output files called slurm- with the job ID.
 
