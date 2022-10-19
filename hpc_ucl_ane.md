@@ -1,6 +1,6 @@
 # Practical info-Contact {#practical-info-contact}
 
-### <span style="text-decoration:underline;">CÉCI, the "Consortium des Équipem</span>ents de Calcul Intensif" {#céci-the-"consortium-des-équipements-de-calcul-intensif"}
+## CÉCI, the "Consortium des Équipements de Calcul Intensif"
 
 - Account gives access to the **clusters** in French Speaking Belgium (Liege,
   Namur, Brussels, Louvain La Neuve)
@@ -12,7 +12,7 @@ cluster will be installed. If people report that they will need to manage huge
 amounts of data, a **Big-data friendly** cluster will be installed. Spread this
 information.
 
-### CISM: “CISM” stand for “Calcul Intensif et Stockage de Masse” [Center for High Performance Computing and Mass Storage] {#cism-“cism”-stand-for-“calcul-intensif-et-stockage-de-masse”-[center-for-high-performance-computing-and-mass-storage]}
+### CISM: “CISM” stand for “Calcul Intensif et Stockage de Masse” [Center for High Performance Computing and Mass Storage]
 
 - CISM is part of the CECI
 - [https://uclouvain.be/en/research/cism](https://uclouvain.be/en/research/cism)
@@ -23,7 +23,7 @@ information.
 - Account gives access to the **interactive servers + Mannebeck cluster** (not
   run by the CECI)
 
-## Interactive Servers (one node) {#interactive-servers-one-node}
+## Interactive Servers (one node)
 
 [https://uclouvain.be/en/research/cism/interactive-servers.html](https://uclouvain.be/en/research/cism/interactive-servers.html)
 
@@ -36,17 +36,17 @@ One node, but more powerful than a personal computer.
   managed in collaboration with SMCS (support methodologie et calcul
   statistique)
 
-### Brufence et CeSAM (Lagrange shut down) {#brufence-et-cesam-lagrange-shut-down}
+### Brufence et CeSAM (Lagrange shut down) 
 
 - 256 GB RAM
 - These interactive machines are dedicated to **Matlab** use.
 
-### <span style="text-decoration:underline;">Pellican</span> (new) {#pellican-new}
+### Pellican
 
 - 256 GB RAM
 - Has installed **Matlab** 2017
 
-## High Performance Computing (cluster) {#high-performance-computing-cluster}
+## High Performance Computing (cluster)
 
 Cluster, various nodes to work in parallel.
 
@@ -54,16 +54,15 @@ Each cluster has a specific function/characteristic (big acceleration, big
 memory capacity, large parallel jobs, very large number of small jobs…you have
 to choose the cluster that best meets your necessities)
 
-### **CECI**:[ http://www.ceci-hpc.be/clusters.html](http://www.ceci-hpc.be/clusters.html) {#ceci-http-www-ceci-hpc-be-clusters-html}
+### **CECI**:[ http://www.ceci-hpc.be/clusters.html](http://www.ceci-hpc.be/clusters.html)
 
-#### <span style="text-decoration:underline;">Lema</span>itr<span style="text-decoration:underline;">e3 (</span>UCLouvain<span style="text-decoration:underline;"> \*see below)</span>
 
-### **CISM**:[ https://uclouvain.be/en/research/cism/high-performance-computing.html](https://uclouvain.be/en/research/cism/high-performance-computing.html) {#cism-https-uclouvain-be-en-research-cism-high-performance-computing-html}
+### **CISM**:[ https://uclouvain.be/en/research/cism/high-performance-computing.html](https://uclouvain.be/en/research/cism/high-performance-computing.html)
 
 Three clusters with different characteristics (2 of which are part of the CECI
 cluster):
 
-#### Lemaitre3 {#lemaitre3}
+#### Lemaitre3
 
 - Louvain-la-Neuve
 - Nodes 96 GB RAM
@@ -72,31 +71,21 @@ cluster):
 - Access CISM+CECI users
 - They will install Freesurfer and PyMVPA here
 
-#### Manneback {#manneback}
+#### Manneback
 
 - Nodes 4 GB RAM
 - Access CISM users only
 - dedicated to High-Throughput Computing (HTC), suited for running a **very
   large number of small jobs**
 
-#### Hmem (will be closed in 1-2 yrs) {#hmem-will-be-closed-in-1-2-yrs}
-
-- Louvain-la-Neuve
-- Nodes 512 GB RAM
-- Access CISM+CECI users
-- adapted to problems that require **large amounts of memory**.
-- They will install Mrtrix here (If you can run your software in bash, you
-  should be able to use a job scheduler like SLURM)
-- 600TB of temporal storage
-
-## Problems {#problems}
+## Problems
 
 - To use matlab in the cluster: Only have license for 4 tokens (=licenses) of
   Matlab and each node uses a license (UCL has 100 Matlab token but CECI? is
   only allowed to use 4 tokens). The 4 tokens to use Matlab are now in the
   interactive serves (none is on the cluster)
 
-## Possible Solutions {#possible-solutions}
+## Possible Solutions
 
 - Compile
   - Informatics department student to change the language of our script
@@ -117,7 +106,7 @@ cluster):
     does not work
 - Use pelican interactive server (Very short term solution)
 
-## Rookie experience with the cluster {#rookie-experience-with-the-cluster}
+## Rookie experience with the cluster
 
 Here the [CECI documentation](https://support.ceci-hpc.be/doc/) for creating an
 account and accessing the cluster. But please do check in the folder where this
@@ -306,7 +295,7 @@ To run the docker container through singularity:
     --participant_label pilot001
 ```
 
-### Resources:
+### Resources
 
 Lecture slides on singularity :
 [Packaging software in portable containers with Singularity](https://indico.cism.ucl.ac.be/event/74/)
@@ -314,7 +303,7 @@ Lecture slides on singularity :
 Recorded Event(lecture) :
 [on Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MmZkOWM0YTQtN2FhOS00NGJhLWI0MWEtNmRmZWNiOWQyNDJl%40thread.v2/0?context=%7b%22Tid%22%3a%227ab090d4-fa2e-4ecf-bc7c-4127b4d582ec%22%2c%22Oid%22%3a%226677b3f8-ce21-40ac-a3f2-4440ec78487e%22%2c%22IsBroadcastMeeting%22%3atrue%7d)
 
-### Tips:
+### Tips
 
 Command to navigate the folders and open text files in a terminal “gui”
 
@@ -322,7 +311,7 @@ Command to navigate the folders and open text files in a terminal “gui”
 mc
 ```
 
-## Other {#other}
+## Other
 
 - There is **Cloud computing** (what Remi was suggesting, virtual machines) and
   **Cluster computing**. UCL only supports cluster computing for the moment.
@@ -333,7 +322,7 @@ mc
 - They can be installed in the home directory of the user by the user. (At our
   own risk)
 
-## CPPlab softwares {#cpplab-softwares}
+## CPPlab softwares
 
 - Matlab
   - SPM
@@ -343,7 +332,7 @@ mc
 - FSL
 - Mrtrix -installed in HMEM
 
-## Relevant links {#relevant-links}
+## Relevant links
 
 https://nl.mathworks.com/products/compiler/matlab-runtime.html
 https://en.wikibooks.org/wiki/SPM/Standalone
