@@ -103,7 +103,7 @@ _Careful : Docker by default :_ inside the virtual machine you are the root user
 permissions on the data that will be in your computer. That needs to be done
 before running the conversion/analyses..
 
-```
+```bash
 --user "$(id -u):$(id -g)"
 ```
 
@@ -116,8 +116,8 @@ will not need to re-run it again from scratch, it will start again at the point
 where it crashed/was killed/stopped. There are a lot of checkpoints where it can
 re-start.
 
-```
-       --work-dir /tmp
+```bash
+--work-dir /tmp
 ```
 
 If you use it : it saves all the intermediate steps : that’s a lot of data, so
