@@ -56,7 +56,7 @@ datalad get .
 or just type
 
 ```bash
-ssh-keygen -t ed25519-sk -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # print the ssh key to copy
 cat ~/.ssh/id_ed25519.pub
