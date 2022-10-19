@@ -1,5 +1,24 @@
 # Running fmriprep or mriqc on a cluster
 
+- [Running fmriprep or mriqc on a cluster](#running-fmriprep-or-mriqc-on-a-cluster)
+   - [Connect to the cluster](#connect-to-the-cluster)
+      - [Add your ssh key](#add-your-ssh-key)
+   - [Modules](#modules)
+   - [Transfer files](#transfer-files)
+      - [Use scp to copy individual files and directories](#use-scp-to-copy-individual-files-and-directories)
+      - [Use rsync to sync files or directories](#use-rsync-to-sync-files-or-directories)
+      - [Use datalad](#use-datalad)
+   - [Running jobs](#running-jobs)
+      - [Create job script](#create-job-script)
+      - [Submit job](#submit-job)
+      - [Check job status](#check-job-status)
+      - [Cancel job](#cancel-job)
+      - [Where does the output go](#where-does-the-output-go)
+   - [Tip](#tip)
+   - [Running singularity on a cluster](#running-singularity-on-a-cluster)
+      - [Run fmriprep on cluster](#run-fmriprep-on-cluster)
+      - [Run mriqc on cluster](#run-mriqc-on-cluster)
+
 ## Connect to the cluster
 
 Open your terminal and type:
@@ -204,7 +223,6 @@ Here is an example script
         --fs-license-file /mmaclean/license/freesurfer.txt \
         --output-spaces MNI152NLin2009cAsym T1w \
         --skip_bids_validation --notrack --stop-on-first-crash
-
 ```
 
 ### Run mriqc on cluster
@@ -243,8 +261,6 @@ Here is an example script
             participant --participant-label CTL01 CTL02 CTL03 \
             -w /scratch/work-mriqc \
     	--no-sub
-
-
 ```
 
 Extra ref:

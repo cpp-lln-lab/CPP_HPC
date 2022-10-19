@@ -21,7 +21,6 @@ task="auditory"
 # https://fmriprep.org/en/21.0.2/spaces.html
 output_spaces="MNI152NLin6Asym T1w"
 
-
 singularity run --cleanenv \
         --bind "$(pwd)":/my_analysis \
         ~/my_images/fmriprep-${VERSION}.simg \
