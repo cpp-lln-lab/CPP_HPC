@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eux -o pipefail
+
 # to be called from the root of the YODA dataset
 
 # subject label passed as argument
