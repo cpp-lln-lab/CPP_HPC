@@ -43,7 +43,7 @@ conda install -c conda-forge datalad
 
 ```BASH
 # clone using the ssh path from a gin repo
-datalad clone git@gin.g-node.org:/USERNAME/REPONAME.git
+datalad install git@gin.g-node.org:/USERNAME/REPONAME.git
 
 # get the data
 cd YOUR-CLONED-REPO
