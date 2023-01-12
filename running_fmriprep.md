@@ -78,7 +78,7 @@ tree
 Copy the freesurfer license into the code folder:
 
 ```bash
-cp ~/Dropbox/Softwares/Freesurfer/License/license.txt \
+cp ~/Dropbox/Software/Freesurfer/License/license.txt \
 	~/my_analysis/code
 ```
 

@@ -42,7 +42,7 @@ output_dir=`pwd`/derivatives
 participant_label=01
 
 # the following will depend on where you keep your freesurfer license
-freesurfer_licence=~/Dropbox/Softwares/Freesurfer/License/license_1.txt
+freesurfer_licence=~/Dropbox/Software/Freesurfer/License/license_1.txt
 
 datalad containers-run -m "fmriprep 01" \
 	--container-name fmriprep \

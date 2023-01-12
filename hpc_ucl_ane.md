@@ -18,7 +18,7 @@ information.
 - [https://uclouvain.be/en/research/cism](https://uclouvain.be/en/research/cism)
 - Mail: egs-cism@listes.uclouvain.be
 - Contacts:
-  - thomas.keutgen@uclouvain.be (Responsable CISM- meeting guy)
+  - thomas.keutgen@uclouvain.be (Responsible CISM- meeting guy)
   - damien.francois@uclouvain.be (other meeting guy)
 - Account gives access to the **interactive servers + Mannebeck cluster** (not
   run by the CECI)
@@ -316,13 +316,13 @@ mc
 - There is **Cloud computing** (what Remi was suggesting, virtual machines) and
   **Cluster computing**. UCL only supports cluster computing for the moment.
 
-- **To install new softwares:**
+- **To install new software:**
 
 - They can install it
 - They can be installed in the home directory of the user by the user. (At our
   own risk)
 
-## CPPlab softwares
+## CPPlab software
 
 - Matlab
   - SPM

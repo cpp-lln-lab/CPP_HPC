@@ -120,6 +120,6 @@ cons:
 
 `scancel YOURJOBID`
 
-- Check how the job perfomed using (or not) the resoures requested
+- Check how the job performed using (or not) the resources requested
 
 `sacct --format Jobid,ReqMem,MaxRSS,TimeLimit,AllocCPU,CPUTime,TotalCPU -j YOURJOBID`
