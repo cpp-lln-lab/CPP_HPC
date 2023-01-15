@@ -22,8 +22,8 @@ export MKL_NUM_THREADS=9
 subjID=$1
 
 singularity run --cleanenv \
-    -B /scratch/users/m/a/marcobar:/scratch \ # set your personal scratch space
-    -B ~/sing_temp:/sing_temp \ 
+    -B /scratch/users/m/a/marcobar:/scratch \
+    -B ~/sing_temp:/sing_temp \
     ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
     /sing_temp/raw /sing_temp/fmriprep \
     participant --participant-label ${subjID} \

@@ -1,25 +1,30 @@
 # Run fmriprep and mriQC on the cluster
 
-Alice Van Audenhaege
-Marco Barilari
-Michèle MacLean
+Alice Van Audenhaege Marco Barilari Michèle MacLean
 
 ## General tips
 
 - The more resources required, the faster it can be but the more waiting time
-- To try things, set `--time=00:05:00` and `--partition=debug` so it starts right away and you can check if it at least starts without problems (eg the singularity images is running, data are bids compatible or data folders are loaded proprerly)
+- To try things, set `--time=00:05:00` and `--partition=debug` so it starts
+  right away and you can check if it at least starts without problems (eg the
+  singularity images is running, data are bids compatible or data folders are
+  loaded proprerly)
 
 ## to do
 
-- if fmriprep stops (eg timeout, error), rerunning the subject(s) might crash due to the fact that freesurfer is not happy that parcellation started already
+- if fmriprep stops (eg timeout, error), rerunning the subject(s) might crash
+  due to the fact that freesurfer is not happy that parcellation started already
 
 ## submit a job via `foo.slurm` script
 
-pros: 
+pros:
+
 - easy to run for multiple subject
-  
+
 cons:
-- the `foo.slurm` can be hard to edit (you can edit via eg vim or locally upload a newversion) in case of error or a change of mind with fmriprep options
+
+- the `foo.slurm` can be hard to edit (you can edit via eg vim or locally upload
+  a newversion) in case of error or a change of mind with fmriprep options
 
 content of the `foo.slurm` file (as in the script `fmriprep_example.slurm`)
 
@@ -49,7 +54,7 @@ subjID=$1
 
 singularity run --cleanenv \
     -B /scratch/users/m/a/marcobar:/scratch \ # set your personal scratch space
-    -B ~/sing_temp:/sing_temp \ 
+    -B ~/sing_temp:/sing_temp \
     ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
     /sing_temp/raw /sing_temp/fmriprep \
     participant --participant-label ${subjID} \
@@ -62,19 +67,20 @@ singularity run --cleanenv \
 on the cluster prompt, submit the job as
 
 ```bash
-sbatch foo.slurm 'sub-099' 
-sbatch foo.slurm 'sub-001 sub-003' 
+sbatch foo.slurm 'sub-099'
+sbatch foo.slurm 'sub-001 sub-003'
 sbatch foo.slurm 'sub-004 sub-005 sub-006'
-sbatch foo.slurm 'sub-007 sub-008 sub-009 sub-010' 
-sbatch foo.slurm 'sub-011 sub-012 sub-013 sub-014 sub-015' 
+sbatch foo.slurm 'sub-007 sub-008 sub-009 sub-010'
+sbatch foo.slurm 'sub-011 sub-012 sub-013 sub-014 sub-015'
 ```
 
 ## submit a job via sbatch command
 
 pros:
-- fast to edit and debug
-cons:
-- if copy pasted in the terminal looses the lines structure so hard to edit (use vscode ;) )
+
+- fast to edit and debug cons:
+- if copy pasted in the terminal looses the lines structure so hard to edit (use
+  vscode ;) )
 - at the moment it only submit one subject per job
 
 ```bash

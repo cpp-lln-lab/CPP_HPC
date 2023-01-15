@@ -36,7 +36,7 @@ One node, but more powerful than a personal computer.
   managed in collaboration with SMCS (support methodologie et calcul
   statistique)
 
-### Brufence et CeSAM (Lagrange shut down) 
+### Brufence et CeSAM (Lagrange shut down)
 
 - 256 GB RAM
 - These interactive machines are dedicated to **Matlab** use.
@@ -55,7 +55,6 @@ memory capacity, large parallel jobs, very large number of small jobs…you have
 to choose the cluster that best meets your necessities)
 
 ### **CECI**:[ http://www.ceci-hpc.be/clusters.html](http://www.ceci-hpc.be/clusters.html)
-
 
 ### **CISM**:[ https://uclouvain.be/en/research/cism/high-performance-computing.html](https://uclouvain.be/en/research/cism/high-performance-computing.html)
 
