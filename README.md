@@ -1,8 +1,8 @@
 # CPP_HPC
 
-
-The content of this documentation is in the `src` folder
-and is rendered on here: https://cpp-lln-lab.github.io/CPP_HPC/
+The content of this documentation is in the `src` folder and is rendered using
+[mkdocs](https://www.mkdocs.org/) on here:
+https://cpp-lln-lab.github.io/CPP_HPC/
 
 To serve locally (requires python):
 
