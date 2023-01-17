@@ -1,0 +1,37 @@
+---
+# Project information
+site_name: CPP lab HPC guids
+repo_name: cpp-lln-lab/CPP_HPC
+repo_url: https://github.com/cpp-lln-lab/CPP_HPC
+# docs_dir: alternative_path # docs/ is the default folder
+copyright: MIT
+
+# This will use Material them
+theme:
+  name: material
+  language: en
+  palette:
+    primary: light blue
+    accent: light blue
+
+docs_dir: src
+
+# Pages
+nav:
+- Welcome: index.md
+- Compute Canada:
+  - connect_cluster: compute_canada/connect_cluster.md
+- HPC UCLouvain:
+  - overview: UCLouvain/ane.md
+  - fmriprep: UCLouvain/fmriprep.md
+  - joint_meeting_notes: UCLouvain/joint_meeting_notes.md
+  - running_fmriprep: UCLouvain/running_fmriprep.md
+
+
+# list of extension
+markdown_extensions:
+- admonition
+- pymdownx.details
+- toc:
+    anchorlink: true
+- pymdownx.superfences

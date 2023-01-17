@@ -84,8 +84,6 @@ It is a BIDSapp so there is a classical way to use it.
 See BIDSapps page :
 [https://remi-gau.github.io/bids_workshop/bids_apps.html](https://remi-gau.github.io/bids_workshop/bids_apps.html)
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
 ![alt_text](images/image1.png "image_tooltip")
 
 Through docker : Everything you do on docker will be done in your terminal.
@@ -96,9 +94,9 @@ For the cluster : you will use “Singularity”, quite similar overall.
 
 Docker or Singularity ?
 
-They are “virtual machines” somehow, you need to tell
-them a certain mapping between your folders in your machine and inside the
-container (see “ \_“Mapping” folders inside the container” \_section).
+They are “virtual machines” somehow, you need to tell them a certain mapping
+between your folders in your machine and inside the container (see “ \_“Mapping”
+folders inside the container” \_section).
 
 _Careful : Docker by default :_ inside the virtual machine you are the root user
 (admin), you have to change the permission so that you have write/change
@@ -195,21 +193,26 @@ Especially this old document we have:
    Look at the available modules and retrieve the needed modules. Module avail :
    list the modules available // module load : loads the module you want
 
-3. Transferring files from your computer to your cluster 2. Secure copy : scp.
-   To copy individual files / directories from your computer to the cluster. Scp
-   &lt;name file> and where you want to copy it (see the documentation above).
-   This is for small files. 3. Rsync : syncing. 4. Datalad : easiest way because
-   there is version control. You can pull the data from there to the cluster.
-   You need to have datalad on the cluster or install it. (we should check that)
-   Here how to install it on the CECI cluster
+3. Transferring files from your computer to your cluster
+
+4. Secure copy : scp. To copy individual files / directories from your computer
+   to the cluster. Scp &lt;name file> and where you want to copy it (see the
+   documentation above). This is for small files.
+5. Rsync : syncing.
+6. Datalad : easiest way because there is version control. You can pull the data
+   from there to the cluster. You need to have datalad on the cluster or install
+   it. (we should check that) Here how to install it on the CECI cluster
    https://github.com/cpp-lln-lab/CPP_HPC
-4. Submitting jobs 5. A job is a batchscript that you will submit to the
-   cluster. 1. The CECI has a wizard to help you create those script:
-   [https://www.ceci-hpc.be/scriptgen.html](https://www.ceci-hpc.be/scriptgen.html) 6.
-   Depending on who is using the cluster in the moment, how many people, what
+
+7. Submitting jobs
+  1. A job is a batchscript that you will submit to the cluster.
+  2. The CECI has a wizard to help you create those script:
+   [https://www.ceci-hpc.be/scriptgen.html](https://www.ceci-hpc.be/scriptgen.html)
+  3. Depending on who is using the cluster in the moment, how many people, what
    you have used before, you will be scheduled at a certain moment. For
    instance, if you haven’t used the cluster in a long time they give you
-   priority. 7. You need to decide how much time the analysis is going to need.
+   priority.
+  4. You need to decide how much time the analysis is going to need.
    For fmriprep & mriqc there are online some examples of how long it should
    take. After tests you can check how much time it took, how much memory etc…
    and then adjust (stats from your analysis). If the time you allocated is not

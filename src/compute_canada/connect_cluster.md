@@ -1,24 +1,5 @@
 # Running fmriprep or mriqc on a cluster
 
-- [Running fmriprep or mriqc on a cluster](#running-fmriprep-or-mriqc-on-a-cluster)
-   - [Connect to the cluster](#connect-to-the-cluster)
-      - [Add your ssh key](#add-your-ssh-key)
-   - [Modules](#modules)
-   - [Transfer files](#transfer-files)
-      - [Use scp to copy individual files and directories](#use-scp-to-copy-individual-files-and-directories)
-      - [Use rsync to sync files or directories](#use-rsync-to-sync-files-or-directories)
-      - [Use datalad](#use-datalad)
-   - [Running jobs](#running-jobs)
-      - [Create job script](#create-job-script)
-      - [Submit job](#submit-job)
-      - [Check job status](#check-job-status)
-      - [Cancel job](#cancel-job)
-      - [Where does the output go](#where-does-the-output-go)
-   - [Tip](#tip)
-   - [Running singularity on a cluster](#running-singularity-on-a-cluster)
-      - [Run fmriprep on cluster](#run-fmriprep-on-cluster)
-      - [Run mriqc on cluster](#run-mriqc-on-cluster)
-
 ## Connect to the cluster
 
 Open your terminal and type:
@@ -73,7 +54,8 @@ source ~/venv_datalad/bin/activate
 pip install datalad
 ```
 
-https://cbs-discourse.uwo.ca/t/installing-datalad-on-compute-canada/23?fbclid=IwAR0cCi1HeA5uU0eHGmR9tdwlbtElpDAcdONRK5cPtPVo5g8RKAg_Iv37Kxo
+See
+[here for more details](https://cbs-discourse.uwo.ca/t/installing-datalad-on-compute-canada/23?fbclid=IwAR0cCi1HeA5uU0eHGmR9tdwlbtElpDAcdONRK5cPtPVo5g8RKAg_Iv37Kxo).
 
 ## Running jobs
 
@@ -185,7 +167,7 @@ datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
 
 ### Run fmriprep on cluster
 
-Have your freesurfer license
+Have your freesurfer license ready.
 
 Here is an example script
 
@@ -263,5 +245,6 @@ singularity run --cleanenv \
       --no-sub
 ```
 
-Extra ref:
-https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/fMRIPrep_Demo_2_RunningAnalysis.html?fbclid=IwAR01abjWmu5c3I19maqWTYUeu8rhR7S1RqJ7VZKliWUfEYOc6kK9ijwkXLk#running-singularity-on-a-supercomputing-cluster
+Extra reference:
+
+- [andysbrainbook](https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/fMRIPrep_Demo_2_RunningAnalysis.html?fbclid=IwAR01abjWmu5c3I19maqWTYUeu8rhR7S1RqJ7VZKliWUfEYOc6kK9ijwkXLk#running-singularity-on-a-supercomputing-cluster)

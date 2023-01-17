@@ -5,18 +5,11 @@ https://hub.docker.com/r/nipreps/fmriprep/tags/
 
 Latest (long term support) LTS version: 20.2.7
 
-- [Running fmriprep with singularity](#running-fmriprep-with-singularity)
-  - [Example on how to run it locally](#example-on-how-to-run-it-locally)
-    - [Build singularity image](#build-singularity-image)
-    - [Set up](#set-up)
-    - [Run fmriprep](#run-fmriprep)
-  - [Datalad + fmriprep](#datalad--fmriprep)
-    - [Folder structure](#folder-structure)
-      - [fMRIprep](#fmriprep)
-
 ## Example on how to run it locally
 
-REQUIREMENTS: datalad for data source control and installing data
+!!! REQUIREMENTS
+
+    datalad for data source control and installing data
 
 ### Build singularity image
 
@@ -85,8 +78,8 @@ cp ~/Dropbox/Software/Freesurfer/License/license.txt \
 	~/my_analysis/code
 ```
 
-Create a temporary dir to keep intermediate results: useful if fmriprep crashes,
-it won't start from zero
+Create a temporary dir to keep intermediate results:
+useful if fmriprep crashes, it won't start from zero.
 
 ```
 mkdir tmp/wdir
@@ -102,7 +95,7 @@ See this part of the FAQ for more info:
 
 https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep
 
-```JSON
+```json
 {
   "fmap": {
     "datatype": "fmap"
@@ -134,8 +127,8 @@ https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be
 }
 ```
 
-Create a `singularity_run_fmriprep.sh` script in the code folder with following
-content:
+Create a `singularity_run_fmriprep.sh` script in the code folder
+with following content:
 
 ```bash
 #!/bin/bash
@@ -164,16 +157,17 @@ output_spaces="MNI152NLin6Asym T1w"
 
 singularity run --cleanenv \
         --bind "$(pwd)":/my_analysis \
-        ~/my_images/fmriprep-${VERSION}.simg \
-        /my_analysis/inputs/raw /my_analysis/derivatives \
-        participant \
-        --participant-label ${participant_label} \
-        --fs-license-file /my_analysis/code/license.txt \
-        -w /my_analysis/tmp/wdir \
-        --dummy-scans ${nb_dummy_scans} \
-        --task-id ${task} \
-        --bids-filter-file /my_analysis/code/bids_filter_file.json \
-        --output-spaces ${output_spaces}
+          ~/my_images/fmriprep-${VERSION}.simg \
+            /my_analysis/inputs/raw \
+            /my_analysis/derivatives \
+            participant \
+            --participant-label ${participant_label} \
+            --fs-license-file /my_analysis/code/license.txt \
+            -w /my_analysis/tmp/wdir \
+            --dummy-scans ${nb_dummy_scans} \
+            --task-id ${task} \
+            --bids-filter-file /my_analysis/code/bids_filter_file.json \
+            --output-spaces ${output_spaces}
 ```
 
 **Folder structure**
@@ -211,7 +205,6 @@ Pass argument of the participant label.
 ```
 
 <!--
-
 ```bash
 #!/bin/bash
 #-------------------------------------------
@@ -290,8 +283,11 @@ datalad containers-run -m "fmriprep 01" \
 	--container-name fmriprep \
 	--input ${input_dir} \
 	--output ${output_dir} \
-    fmriprep $input_dir ${output_dir} participant \
-	--participant-label ${participant_label} \
-	-w /tmp --fs-license-file ${freesurfer_licence} \
-    --output-spaces T1w:res-native MNI152NLin2009cAsym:res-native
+    fmriprep \
+      $input_dir \
+      ${output_dir} \
+      participant \
+      --participant-label ${participant_label} \
+      -w /tmp --fs-license-file ${freesurfer_licence} \
+        --output-spaces T1w:res-native MNI152NLin2009cAsym:res-native
 ```

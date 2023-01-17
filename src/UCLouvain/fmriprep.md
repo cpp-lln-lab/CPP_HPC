@@ -10,23 +10,19 @@ Alice Van Audenhaege Marco Barilari Michèle MacLean
   singularity images is running, data are bids compatible or data folders are
   loaded proprerly)
 
-## to do
-
-- if fmriprep stops (eg timeout, error), rerunning the subject(s) might crash
-  due to the fact that freesurfer is not happy that parcellation started already
-
 ## submit a job via `foo.slurm` script
 
-pros:
+- pros:
 
-- easy to run for multiple subject
+  - easy to run for multiple subject
 
-cons:
+- cons:
 
-- the `foo.slurm` can be hard to edit (you can edit via eg vim or locally upload
-  a newversion) in case of error or a change of mind with fmriprep options
+  - the `foo.slurm` can be hard to edit (you can edit via eg vim or locally
+    upload a newversion) in case of error or a change of mind with fmriprep
+    options
 
-content of the `foo.slurm` file (as in the script `fmriprep_example.slurm`)
+Content of the `foo.slurm` file (as in the script `fmriprep_example.slurm`)
 
 ```bash
 #!/bin/bash
@@ -53,18 +49,21 @@ export MKL_NUM_THREADS=9
 subjID=$1
 
 singularity run --cleanenv \
-    -B /scratch/users/m/a/marcobar:/scratch \ # set your personal scratch space
+    -B /scratch/users/m/a/marcobar:/scratch \
     -B ~/sing_temp:/sing_temp \
-    ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
-    /sing_temp/raw /sing_temp/fmriprep \
-    participant --participant-label ${subjID} \
-    --work-dir /scratch/work-fmriprep \
-    --fs-license-file /sing_temp/license.txt \
-    --output-spaces MNI152NLin2009cAsym T1w \
-    --notrack --stop-on-first-crash
+      ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
+        /sing_temp/raw \
+        /sing_temp/fmriprep \
+        participant \
+        --participant-label ${subjID} \
+        --work-dir /scratch/work-fmriprep \
+        --fs-license-file /sing_temp/license.txt \
+        --output-spaces MNI152NLin2009cAsym T1w \
+        --notrack \
+        --stop-on-first-crash
 ```
 
-on the cluster prompt, submit the job as
+On the cluster prompt, submit the job as:
 
 ```bash
 sbatch foo.slurm 'sub-099'
@@ -76,16 +75,19 @@ sbatch foo.slurm 'sub-011 sub-012 sub-013 sub-014 sub-015'
 
 ## submit a job via sbatch command
 
-pros:
+- pros:
 
-- fast to edit and debug cons:
-- if copy pasted in the terminal looses the lines structure so hard to edit (use
-  vscode ;) )
-- at the moment it only submit one subject per job
+  - fast to edit and debug cons:
+  - if copy pasted in the terminal looses the lines structure so hard to edit
+    (use vscode ;) )
+  - at the moment it only submit one subject per job
 
 ```bash
- ls -d inputs/raw/sub* | xargs -n1 -I{} \ # read subj list to submit each to a job
- sbatch --job-name=fmriprep_trial \ # slurm job set up
+# read subj list to submit each to a job
+ls -d inputs/raw/sub* | xargs -n1 -I{} \
+
+# slurm job set up
+sbatch --job-name=fmriprep_trial \
   --comment=cpp_cluster_hackaton \
   --time=42:00:00 \
   --ntasks=1 \
@@ -96,19 +98,22 @@ pros:
   --mail-type=ALL \
   --output=fmriprep-slurm_{}-job-%j.txt
   --wrap \
- “singularity run --cleanenv \ # fmriprep call
-    -B /scratch/users/m/a/marcobar:/scratch \
-    -B ~/sing_temp:/sing_temp \
-    ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
-    /sing_temp/raw /sing_temp/fmriprep \
-    participant --participant-label {} \
-    --work-dir /scratch/work-fmriprep \
-    --fs-license-file /sing_temp/license.txt \
-    --output-spaces MNI152NLin2009cAsym T1w \
-    --notrack --stop-on-first-crash”
+    “singularity run --cleanenv \
+        -B /scratch/users/m/a/marcobar:/scratch \
+        -B ~/sing_temp:/sing_temp \
+        ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
+        /sing_temp/raw \
+        /sing_temp/fmriprep \
+        participant \
+        --participant-label {} \
+        --work-dir /scratch/work-fmriprep \
+        --fs-license-file /sing_temp/license.txt \
+        --output-spaces MNI152NLin2009cAsym T1w \
+        --notrack \
+        --stop-on-first-crash”
 ```
 
-## Utilia
+## Utilities
 
 - Check cluster resources
 
@@ -129,3 +134,9 @@ pros:
 - Check how the job performed using (or not) the resources requested
 
 `sacct --format Jobid,ReqMem,MaxRSS,TimeLimit,AllocCPU,CPUTime,TotalCPU -j YOURJOBID`
+
+
+## TODO
+
+- if fmriprep stops (eg timeout, error), rerunning the subject(s) might crash
+  due to the fact that freesurfer is not happy that parcellation started already
