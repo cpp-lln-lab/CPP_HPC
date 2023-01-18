@@ -7,71 +7,6 @@ Interesting slides & other stuff :
 - CECI cluster documentation page :
   [https://support.ceci-hpc.be/doc/](https://support.ceci-hpc.be/doc/)
 
-## What are the needs ?
-
-- DICOM to BIDS
-- Nifti converter
-- BIDSifying data from St Luc
-- Run fmriprep
-- Use the cluster
-
-## Who has:
-
-- Converted data to BIDS
-  - Pretty much everyone
-- Used fmriprep
-  - On docker: Filipo
-  - On cluster: Michele
-  - Used it : Jeanne
-- Used the cluster (singularity : Marco tried)
-  - Michele
-
-## BIDS Conversion
-
-DICOM -> Nifti
-
-- mricroGL
-- MRIcron
-- HeuDiConv
-
-BIDSify by hand
-
-DICOMtoBIDS (in lab github: Iqra had issues with it)
-
-NB: the converters never take care of your events.tsv files : this will have to
-be done by hand.
-
-DICOM -> nifti : **dicom2nii** is the underlying converter.
-
-- One-to-one mapping : this DICOM file will become this other nii file (bidscoin
-  and bidsme)
-- Rule-based mapping : depending on rule X this file becomes this one (dcm2bids,
-  heudiconv, fieldtrip, data2bids)
-
-In the lab have been tested: dcm2bids, heudiconv
-
-Remi tried bidscoin but didn’t fully work, bidsme is out of question, too much
-script is out of question as well (Fieldtrip, data2bids, SPM12…).
-
-Difference dcm2bids vs. HeuDiConv :
-
-- More complete : HeuDiConv will create some files that exist in a BIDS dataset,
-  that dcm2bids won’t create.
-  - eg. \_scans.tsv : can be useful when you want to check when the scans were
-    acquired etc…
-- Bash for dcm2bis vs python for heudiconv
-
-** The winner is : HeuDiConv**
-
-[https://github.com/nipy/heudiconv](https://github.com/nipy/heudiconv)
-
-Suggested to use their docker
-
-Best walkthrough :
-
-[https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/heudiconv.html](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/heudiconv.html)
-
-Because it runs on docker, it can technically be done on the cluster.
 
 ## fMRIprep
 
@@ -87,8 +22,7 @@ For the cluster : you will use “Singularity”, quite similar overall.
 ### Docker or Singularity ?
 
 They are “virtual machines” somehow, you need to tell them a certain mapping
-between your folders in your machine and inside the container (see “ \_“Mapping”
-folders inside the container” \_section).
+between your folders in your machine and inside the container.
 
 _Careful : Docker by default :_ inside the virtual machine you are the root user
 (admin), you have to change the permission so that you have write/change
@@ -150,11 +84,11 @@ Example of a script of fmriprep on container :
 
 ### Running fmriprep / mriqc on the cluster
 
-What’s amazing is that you can just run it and do not worry about it. You can
-ask it to send you emails when the job starts/stops/crashes…
+What’s amazing is that you can just run it and do not worry about it.
+You can ask it to send you emails when the job starts/stops/crashes…
 
-There is no user interface, you need to get familiar with using terminal lines
-only, and get used to some specific lines.
+There is no user interface, you need to get familiar
+with using terminal lines only, and get used to some specific lines.
 
 You can use it anywhere in the world.
 

@@ -22,11 +22,10 @@ nav:
 - Compute Canada:
   - connect_cluster: compute_canada/connect_cluster.md
 - HPC UCLouvain:
-  - overview: UCLouvain/ane.md
+  - overview: UCLouvain/overview.md
   - fmriprep: UCLouvain/fmriprep.md
   - joint_meeting_notes: UCLouvain/joint_meeting_notes.md
   - running_fmriprep: UCLouvain/running_fmriprep.md
-
 
 # list of extension
 markdown_extensions:
