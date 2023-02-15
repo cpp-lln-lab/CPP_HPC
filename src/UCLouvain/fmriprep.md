@@ -1,6 +1,8 @@
 # Run fmriprep and mriQC on the cluster
 
-Alice Van Audenhaege Marco Barilari Michèle MacLean
+- Alice Van Audenhaege
+- Marco Barilari
+- Michèle MacLean
 
 ## General tips
 

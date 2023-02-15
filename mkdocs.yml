@@ -33,4 +33,14 @@ markdown_extensions:
 - pymdownx.details
 - toc:
     anchorlink: true
-- pymdownx.superfences
+    permalink: '#'
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !%21python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+- include-markdown

@@ -81,7 +81,7 @@ cp ~/Dropbox/Software/Freesurfer/License/license.txt \
 Create a temporary dir to keep intermediate results:
 useful if fmriprep crashes, it won't start from zero.
 
-```
+```bash
 mkdir tmp/wdir
 ```
 
@@ -96,35 +96,7 @@ See this part of the FAQ for more info:
 https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep
 
 ```json
-{
-  "fmap": {
-    "datatype": "fmap"
-  },
-  "bold": {
-    "datatype": "func",
-    "suffix": "bold"
-  },
-  "sbref": {
-    "datatype": "func",
-    "suffix": "sbref"
-  },
-  "flair": {
-    "datatype": "anat",
-    "suffix": "FLAIR"
-  },
-  "t2w": {
-    "datatype": "anat",
-    "suffix": "T2w"
-  },
-  "t1w": {
-    "datatype": "anat",
-    "suffix": "T1w"
-  },
-  "roi": {
-    "datatype": "anat",
-    "suffix": "roi"
-  }
-}
+{% include "bids_filter_file.json" %}
 ```
 
 Create a `singularity_run_fmriprep.sh` script in the code folder

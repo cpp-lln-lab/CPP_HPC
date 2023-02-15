@@ -285,7 +285,7 @@ cat slurm $jobID>.out
 
 Ex: ![alt_text](images/image3.png "image_tooltip")
 
-#### Running docker stuff, example with mriQC
+#### Running container stuff, example with mriQC
 
 To create the singularity image:
 
@@ -294,7 +294,7 @@ singularity pull --name ~/sing_images/mriqc_0.15.2.sif
 docker://poldracklab/mriqc:0.15.2
 ```
 
-To run the docker container through singularity:
+To run singularity:
 
 ```bash
     singularity run --cleanenv \
