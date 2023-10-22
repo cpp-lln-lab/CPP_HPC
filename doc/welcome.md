@@ -1,6 +1,6 @@
 # CPP_HPC
 
-This repo is a hub to centralize snippet of code, script etc to run analyses in
+This repo is a hub to centralize snippet of code, script etc to run analyses (freesurfer, fmriprep, mriqc, etc) in
 the [CECI clusters](http://www.ceci-hpc.be/) available for UCLouvain.
 
 To get an account, follow the instructions in the
