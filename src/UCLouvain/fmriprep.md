@@ -115,7 +115,7 @@ sbatch --job-name=fmriprep_trial \
         --stop-on-first-crash”
 ```
 
-## Utilities
+## Utilitiess
 
 - Check cluster resources
 
