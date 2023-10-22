@@ -22,7 +22,7 @@
 # writtent by CPP people
 #
 # Submission script for Lemaitre3
-# 
+#
 # USAGE on cluster:
 #
 #   sbatch cpp_fmriprep.sh <subjID> <TaskName>
@@ -34,7 +34,7 @@
 #
 # - multiple subjects
 # sbatch cpp_fmriprep.sh 'sub-01 sub-02` visMotLocalizer
-# 
+#
 # - multipple tasks
 # sbatch cpp_fmriprep.sh sub-01 'visMotLocalizer audMotLocalizer'
 

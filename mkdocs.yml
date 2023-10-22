@@ -27,7 +27,7 @@ nav:
   - run mriqc: run_mriqc.md
 - Contributing: contributing.md
 - Archive:
-  - fmriprep cluster workshop (2023): 
+  - fmriprep cluster workshop (2023):
     - meeting notes: fmriprep_cluster_workshop_2023/joint_meeting_notes.md
     - Compute Canada: fmriprep_cluster_workshop_2023/canada_connect_cluster.md
   - rookie experience (2019): archive/rookie_experience_2019.md

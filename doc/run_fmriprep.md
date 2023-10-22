@@ -2,12 +2,12 @@
 
 Written by CPP lab people
 
-To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing) 
+To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing)
 
 ## General tips
 
 - The more resources required, the faster it can be but the more waiting time
-  
+
 - To try things, set `--time=00:05:00` and `--partition=debug` so it starts
   right away and you can check if it at least starts without problems (eg the
   singularity images is running, data are bids compatible or data folders are
@@ -17,7 +17,7 @@ To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing)
 
 - have your data on the cluster
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
-- get the fmriprep singularity image as follow: 
+- get the fmriprep singularity image as follow:
 
 here the example is with `fmriprp version 21.0.1` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
 
@@ -41,7 +41,7 @@ datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
     - easy to run for multiple subject
 - cons:
     - the `slurm` script can be hard to edit from within the cluster in case of error or a change of mind with fmriprep
-    options. You can edit via `vim` or locally and then 
+    options. You can edit via `vim` or locally and then
     uploading a newversion.
 
 Content of the `cpp_fmriprep.slurm` file (download and edit from [here](cpp_fmriprep.slurm))
@@ -59,7 +59,7 @@ On the cluster prompt, submit the jobs as:
 
 ```bash
 # Submission command for Lemaitre3
- 
+
 # USAGE on cluster:
 
 sbatch cpp_fmriprep.sh <subjID> <TaskName>
@@ -72,7 +72,7 @@ sbatch cpp_fmriprep.sh sub-01 visMotLocalizer
 # - multiple subjects
 
 sbatch cpp_fmriprep.sh 'sub-01 sub-02' visMotLocalizer
- 
+
 # - multiple tasks
 
 sbatch cpp_fmriprep.sh sub-01 'visMotLocalizer audMotLocalizer'
@@ -87,7 +87,7 @@ ls -d inputs/raw/sub* | xargs -n1 -I{} \
 ## Submit a fmriprep job via sbatch command without a script (mainly for DEBUG purposes)
 
 - pros:
-    - fast to edit and debug 
+    - fast to edit and debug
 - cons:
     - if copy pasted in the terminal looses the lines structure so hard to edit
     (use vscode ;) )

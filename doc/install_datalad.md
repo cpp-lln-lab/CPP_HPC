@@ -1,6 +1,6 @@
 ## Installing Datalad on the CECI cluster for your user
 
-To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing) 
+To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing)
 
 - First of all access one the clusters (this has been tried on _Lemaitre3_)
 - Upgrade `pip`.
