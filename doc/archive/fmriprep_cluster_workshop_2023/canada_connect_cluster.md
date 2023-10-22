@@ -172,7 +172,7 @@ Have your freesurfer license ready.
 Here is an example script
 
 ```bash
-{% include "fmriprep_cluster_workshop_2023/canada_fmriprep_on_cluster.sh" %}
+{% include "archive/fmriprep_cluster_workshop_2023/canada_fmriprep_on_cluster.sh" %}
 ```
 
 Extra reference:

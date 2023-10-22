@@ -3,7 +3,7 @@
 site_name: CPP lab HPC guide
 repo_name: cpp-lln-lab/CPP_HPC
 repo_url: https://github.com/cpp-lln-lab/CPP_HPC
-
+# docs_dir: alternative_path # docs/ is the default folder
 copyright: MIT
 
 # This will use Material them
@@ -18,7 +18,7 @@ docs_dir: doc
 
 # Pages
 nav:
-- Welcome: welcome.md
+- Welcome: index.md
 - HPC UCLouvain (CECI):
   - overview: overview.md
   - cluster code snippets: cluster_code_snippets.md
@@ -28,8 +28,8 @@ nav:
 - Contributing: contributing.md
 - Archive:
   - fmriprep cluster workshop (2023):
-    - meeting notes: fmriprep_cluster_workshop_2023/joint_meeting_notes.md
-    - Compute Canada: fmriprep_cluster_workshop_2023/canada_connect_cluster.md
+    - meeting notes: archive/fmriprep_cluster_workshop_2023/joint_meeting_notes.md
+    - Compute Canada: archive/fmriprep_cluster_workshop_2023/canada_connect_cluster.md
   - rookie experience (2019): archive/rookie_experience_2019.md
   - fmriprep notes: archive/running_fmriprep.md
 

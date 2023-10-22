@@ -96,7 +96,7 @@ See this part of the FAQ for more info:
 https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep
 
 ```json
-{% include "fmriprep_cluster_workshop_2023/bids_filter_file.json" %}
+{% include "archive/fmriprep_cluster_workshop_2023/bids_filter_file.json" %}
 ```
 
 Create a `singularity_run_fmriprep.sh` script in the code folder
