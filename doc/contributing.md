@@ -10,7 +10,7 @@ Open an issue from [here](https://github.com/cpp-lln-lab/CPP_HPC/issues/new/choo
 
 The actual text/scripts you find in this website are in this [repo](https://github.com/cpp-lln-lab/CPP_HPC) and in the `doc` folder [here](https://github.com/cpp-lln-lab/CPP_HPC/tree/main/doc) 
 
-Each section of the website is a specific markdown with the same transparent name. 
+Each article/section of the website is a specific markdown file with the same transparent name (more or less). 
 
 ### Edit from github
 
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-and view the preview here [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+and view the preview here [http://127.0.0.1:8000/welcome](http://127.0.0.1:8000/welcome)
 
 7. push your changes to your forked repository
 8. open a pull request
