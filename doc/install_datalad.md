@@ -1,12 +1,6 @@
-# CPP_HPC
-
-This repo is a hub to centralize snippet of code, script etc to run analyses in
-the [CECI clusters](http://www.ceci-hpc.be/) available for UCLouvain.
-
-To get an account, follow the instructions in the
-[documentation](https://support.ceci-hpc.be/doc/).
-
 ## Installing Datalad on the CECI cluster for your user
+
+To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing)
 
 - First of all access one the clusters (this has been tried on _Lemaitre3_)
 - Upgrade `pip`.
