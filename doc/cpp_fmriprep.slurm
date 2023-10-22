@@ -60,7 +60,8 @@ FMRIPREP_VERSION="23.1.4"
 # set username to locate scratch folder
 ceci_username="username"
 
-# set output space
+# set fmriprep arguments
+nb_dummy_scans=0
 
 space="MNI152NLin2009cAsym T1w"
 
@@ -88,6 +89,7 @@ singularity run --cleanenv \
             --work-dir /scratch/work-fmriprep \
             --fs-license-file /freesurfer_license/license.txt \
             --output-spaces "${space}" \
+            --dummy-scans ${nb_dummy_scans} \
             --notrack \
             --skip_bids_validation \
             --stop-on-first-crash

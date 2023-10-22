@@ -1,8 +1,8 @@
 # Run fmriprep and mriQC on the cluster
 
-- Alice Van Audenhaege
-- Marco Barilari
-- Michèle MacLean
+Written by CPP lab people
+
+To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing) 
 
 ## General tips
 
@@ -12,6 +12,28 @@
   right away and you can check if it at least starts without problems (eg the
   singularity images is running, data are bids compatible or data folders are
   loaded proprerly). See below in the section [Submit a fmriprep job via sbatch command](#submit-a-fmriprep-job-via-sbatch-command-without-a-script-mainly-for-debug-purposes)
+
+## Prepare to run fmriprep on the cluster
+
+- have your data on the cluster
+- install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
+- get the fmriprep singularity image as follow: 
+
+here the example is with `fmriprp version 21.0.1` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
+
+```bash
+datalad install https://github.com/ReproNim/containers.git
+
+datalad get containers/images/bids/bids-fmriprep--21.0.1.sing
+```
+
+Depending on the cluster “unlock” is needed or not.
+
+```bash
+datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
+```
+
+  - get your `freesurfer` license (user specific) for free [here](https://surfer.nmr.mgh.harvard.edu/registration.html) and move it to the cluster
 
 ## Submit a fmriprep job via a `slurm` script
 
@@ -99,30 +121,31 @@ sbatch --job-name=fmriprep_trial \
         --stop-on-first-crash”
 ```
 
-## Utilities
+## TIPS
 
-- Check cluster resources
+### check your job
 
-`sinfo`
+see [here](https://github.com/cpp-lln-lab/CPP_HPC/cluster_code_snippets/#check-your-running-jobs)
 
-- Check how my job are doing
-
-`squeue --me`
-
-- Check when my jobs will start (not very reliable though)
-
-`squeue --me --start`
-
-- To cancel the job
-
-`scancel YOURJOBID`
-
-- Check how the job performed using (or not) the resources requested
-
-`sacct --format Jobid,ReqMem,MaxRSS,TimeLimit,AllocCPU,CPUTime,TotalCPU -j YOURJOBID`
-
-
-## TODO
+### crashes
 
 - if fmriprep stops (eg timeout, error), rerunning the subject(s) might crash
   due to the fact that freesurfer is not happy that parcellation started already
+
+### bids fiter file
+
+Add a `bids_filter_file.json` config file to help you define what fmriprep
+should consider as `bold` as `T1w`.
+
+The one below corresponds to the fMRIprep default (also available inside this
+repo).
+
+See this part of the FAQ for more info:
+
+https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep
+
+```json
+{% include "bids_filter_file.json" %}
+```
+
+you will need to add the argument `--bids-filter-file path/to/bids_filter_file.json` when running fmriprep.
