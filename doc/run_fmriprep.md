@@ -2,7 +2,7 @@
 
 Written by CPP lab people
 
-To contribute see [here](https://github.com/cpp-lln-lab/CPP_HPC/contributing)
+To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 
 ## General tips
 
