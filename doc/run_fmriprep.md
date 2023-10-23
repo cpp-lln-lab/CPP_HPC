@@ -27,7 +27,7 @@ datalad install https://github.com/ReproNim/containers.git
 datalad get containers/images/bids/bids-fmriprep--21.0.1.sing
 ```
 
-Depending on the cluster “unlock” is needed or not.
+Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`.
 
 ```bash
 datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
@@ -62,26 +62,29 @@ On the cluster prompt, submit the jobs as:
 
 # USAGE on cluster:
 
-sbatch cpp_fmriprep.sh <subjID> <TaskName>
+sbatch cpp_fmriprep.slurm <subjID> <TaskName>
 
 # examples:
 # - 1 subject 1 task
 
-sbatch cpp_fmriprep.sh sub-01 visMotLocalizer
+sbatch cpp_fmriprep.slurm sub-01 visMotLocalizer
+
+# - 1 subject all task
+sbatch cpp_fmriprep.slurm sub-01 ''
+
+# - all subjects 1 task
+sbatch cpp_fmriprep.slurm '' visMotLocalizer
 
 # - multiple subjects
-
-sbatch cpp_fmriprep.sh 'sub-01 sub-02' visMotLocalizer
+sbatch cpp_fmriprep.slurm 'sub-01 sub-02' visMotLocalizer
 
 # - multiple tasks
-
-sbatch cpp_fmriprep.sh sub-01 'visMotLocalizer audMotLocalizer'
+sbatch cpp_fmriprep.slurm sub-01 'visMotLocalizer audMotLocalizer'
 
 # submit all the subjects (1 per job) all at once
-
-# read subj list to submit each to a job
-ls -d inputs/raw/sub* | xargs -n1 -I{} \
-  sbatch cpp_fmriprep.sh {}
+# read subj list to submit each to a job for all the tasks
+# !!! to run from within `raw` folder
+ls -d sub* | xargs -n1 -I{} sbatch path/to/cpp_fmriprep.slurm {} ''
 ```
 
 ## Submit a fmriprep job via sbatch command without a script (mainly for DEBUG purposes)
