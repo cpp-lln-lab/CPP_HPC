@@ -38,9 +38,9 @@
 # - multipple tasks
 # sbatch cpp_fmriprep.sh sub-01 'visMotLocalizer audMotLocalizer'
 
-# create output and jobs_report folders in case they don't exist
-mkdir -p "${output_dir}"
+# create jobs_report and output folders in case they don't exist
 mkdir -p $HOME/jobs_report/
+mkdir -p "${output_dir}"
 
 # fail whenever something is fishy
 # -e exit immediately
@@ -69,6 +69,7 @@ bids_dir="$HOME/fmriprep_trial/raw"
 output_dir="$HOME/fmriprep_trial/derivatives/fmriprep"
 freesurfer_license_folder="$HOME/tools/freesurfer_license"
 
+# make the scratch folder, here there is no limit space and fmriprep can store stuff in case of crash and do not start from zero again
 mkdir -p "${scratch_dir}"/work-fmriprep
 
 singularity run --cleanenv \
