@@ -69,6 +69,8 @@ bids_dir="$HOME/fmriprep_trial/raw"
 output_dir="$HOME/fmriprep_trial/derivatives/fmriprep"
 freesurfer_license_folder="$HOME/tools/freesurfer_license"
 
+mkdir -p "${scratch_dir}"/work-fmriprep
+
 singularity run --cleanenv \
     -B "${scratch_dir}":/scratch_dir \
     -B "${bids_dir}":/bids_dir \
