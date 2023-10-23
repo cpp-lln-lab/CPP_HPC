@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #SBATCH --job-name=fMRIprep
-#SBATCH --time=00:05:00 # hh:mm:ss
+#SBATCH --time=9:00:00 # hh:mm:ss
 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6
+#SBATCH --cpus-per-task=9
 #SBATCH --mem-per-cpu=10000 # megabytes
 #SBATCH --partition=batch,debug
 
