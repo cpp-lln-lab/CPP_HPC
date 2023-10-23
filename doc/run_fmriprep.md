@@ -27,6 +27,15 @@ datalad install https://github.com/ReproNim/containers.git
 datalad get containers/images/bids/bids-fmriprep--21.0.1.sing
 ```
 
+In case you have installe the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
+
+```bash
+# go to the repo folder
+cd path/to/containers
+
+datald update --merge
+``````
+
 Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`.
 
 ```bash
