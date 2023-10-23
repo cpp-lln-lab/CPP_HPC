@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #SBATCH --job-name=fMRIprep
-#SBATCH --time=08:00:00 # hh:mm:ss
+#SBATCH --time=09:00:00 # hh:mm:ss
 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=9
+#SBATCH --cpus-per-task=6
 #SBATCH --mem-per-cpu=10000 # megabytes
 #SBATCH --partition=batch,debug
 
@@ -14,8 +14,8 @@
 
 #SBATCH --comment=project-name
 
-#export OMP_NUM_THREADS=9
-#export MKL_NUM_THREADS=9
+#export OMP_NUM_THREADS=1
+#export MKL_NUM_THREADS=1
 
 ## CPP frmiprep script for CECI cluster
 #
@@ -46,10 +46,7 @@
 # https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
 set -e -x -u -o pipefail
 
-module purge
-
-# set to true to run locally
-LOCAL=false
+module --force purge
 
 subjID=$1
 TaskName=$2
@@ -58,22 +55,18 @@ TaskName=$2
 FMRIPREP_VERSION="23.1.4"
 
 # set username to locate scratch folder
-ceci_username="username"
+ceci_username="marcobar"
 
 # set fmriprep arguments
 nb_dummy_scans=0
 
-space="MNI152NLin2009cAsym T1w"
-
-path_to_singularity_image="$HOME/singularity_images/containers/images/bids/bids-fmriprep--${FMRIPREP_VERSION}.sing"
+path_to_singularity_image="$HOME/tools/containers/images/bids/bids-fmriprep--${FMRIPREP_VERSION}.sing"
 scratch_dir="/scratch/users/m/a/${ceci_username}"
-bids_dir="../inputs/raw"
-output_dir="../outputs"
-freesurfer_license_folder="$HOME/freesurfer_license"
-tmp_dir="../tmp"
+bids_dir="$HOME/fmriprep_trial/raw"
+output_dir="$HOME/fmriprep_trial/derivatives/fmriprep"
+freesurfer_license_folder="$HOME/tools/freesurfer_license"
 
 # create output and tmp folders in case they don't exist
-mkdir -p "${tmp_dir}"
 mkdir -p "${output_dir}"
 
 singularity run --cleanenv \
@@ -86,9 +79,9 @@ singularity run --cleanenv \
             /output \
             participant --participant-label "${subjID}" \
             --task "${TaskName}" \
-            --work-dir /scratch/work-fmriprep \
+            --work-dir /scratch_dir/work-fmriprep \
             --fs-license-file /freesurfer_license/license.txt \
-            --output-spaces "${space}" \
+            --output-spaces MNI152NLin2009cAsym T1w \
             --dummy-scans ${nb_dummy_scans} \
             --notrack \
             --skip_bids_validation \
