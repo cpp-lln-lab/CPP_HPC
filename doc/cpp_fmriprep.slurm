@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=fMRIprep
-#SBATCH --time=09:00:00 # hh:mm:ss
+#SBATCH --time=00:05:00 # hh:mm:ss
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
@@ -10,7 +10,7 @@
 
 #SBATCH --mail-user=marco.barilari@uclouvain.be
 #SBATCH --mail-type=ALL
-#SBATCH --output=$HOME/jobs_report/fmriprep_job-%j.txt
+#SBATCH --output=/home/ucl/irsp/marcobar/jobs_report/fmriprep_job-%j.txt
 
 #SBATCH --comment=project-name
 
