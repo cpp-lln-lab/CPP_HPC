@@ -10,7 +10,7 @@
 
 #SBATCH --mail-user=marco.barilari@uclouvain.be
 #SBATCH --mail-type=ALL
-#sbatch --output=fmriprep_job-%j.txt
+#SBATCH --output=$HOME/jobs_report/fmriprep_job-%j.txt
 
 #SBATCH --comment=project-name
 
@@ -38,6 +38,9 @@
 # - multipple tasks
 # sbatch cpp_fmriprep.sh sub-01 'visMotLocalizer audMotLocalizer'
 
+# create output and jobs_report folders in case they don't exist
+mkdir -p "${output_dir}"
+mkdir -p $HOME/jobs_report/
 
 # fail whenever something is fishy
 # -e exit immediately
@@ -65,9 +68,6 @@ scratch_dir="/scratch/users/m/a/${ceci_username}"
 bids_dir="$HOME/fmriprep_trial/raw"
 output_dir="$HOME/fmriprep_trial/derivatives/fmriprep"
 freesurfer_license_folder="$HOME/tools/freesurfer_license"
-
-# create output and tmp folders in case they don't exist
-mkdir -p "${output_dir}"
 
 singularity run --cleanenv \
     -B "${scratch_dir}":/scratch_dir \
