@@ -1,4 +1,4 @@
-# Run fmriprep and mriQC on the cluster
+# Run fmriprep on the cluster
 
 Written by CPP lab people
 
