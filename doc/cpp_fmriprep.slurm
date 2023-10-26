@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #SBATCH --job-name=fMRIprep
-#SBATCH --time=00:05:00 # hh:mm:ss
+#SBATCH --time=9:00:00 # hh:mm:ss
 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6
+#SBATCH --cpus-per-task=9
 #SBATCH --mem-per-cpu=10000 # megabytes
 #SBATCH --partition=batch,debug
 
@@ -14,33 +14,40 @@
 
 #SBATCH --comment=project-name
 
-#export OMP_NUM_THREADS=1
-#export MKL_NUM_THREADS=1
+#export OMP_NUM_THREADS=9
+#export MKL_NUM_THREADS=9
 
 ## CPP frmiprep script for CECI cluster
 #
 # writtent by CPP people
 #
-# Submission script for Lemaitre3
-#
-# USAGE on cluster:
-#
-#   sbatch cpp_fmriprep.sh <subjID> <TaskName>
-#
+# Submission command for Lemaitre3
+# 
+# sbatch cpp_fmriprep.slurm <subjID> <TaskName>
+# 
 # examples:
-#
 # - 1 subject 1 task
-# sbatch cpp_fmriprep.sh sub-01 visMotLocalizer
-#
+# sbatch cpp_fmriprep.slurm sub-01 visMotLocalizer
+# 
+# - 1 subject all task
+# sbatch cpp_fmriprep.slurm sub-01 ''
+# 
+# - all subjects 1 task
+# sbatch cpp_fmriprep.slurm '' visMotLocalizer
+# 
 # - multiple subjects
-# sbatch cpp_fmriprep.sh 'sub-01 sub-02` visMotLocalizer
+# sbatch cpp_fmriprep.slurm 'sub-01 sub-02' visMotLocalizer
+# 
+# - multiple tasks
+# sbatch cpp_fmriprep.slurm sub-01 'visMotLocalizer audMotLocalizer'
 #
-# - multipple tasks
-# sbatch cpp_fmriprep.sh sub-01 'visMotLocalizer audMotLocalizer'
+# - submit all the subjects (1 per job) all at once
+# read subj list to submit each to a job for all the tasks
+# !!! to run from within `raw` folder
+# ls -d sub* | xargs -n1 -I{} sbatch path/to/cpp_fmriprep.slurm {} ''
 
-# create jobs_report and output folders in case they don't exist
+# create jobs_report folder in case they don't exist
 mkdir -p $HOME/jobs_report/
-mkdir -p "${output_dir}"
 
 # fail whenever something is fishy
 # -e exit immediately
@@ -71,6 +78,9 @@ freesurfer_license_folder="$HOME/tools/freesurfer_license"
 
 # make the scratch folder, here there is no limit space and fmriprep can store stuff in case of crash and do not start from zero again
 mkdir -p "${scratch_dir}"/work-fmriprep
+
+# create output folder in case it does not exists
+mkdir -p "${output_dir}"
 
 singularity run --cleanenv \
     -B "${scratch_dir}":/scratch_dir \

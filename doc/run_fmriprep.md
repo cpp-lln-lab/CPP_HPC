@@ -1,4 +1,4 @@
-# Run fmriprep and mriQC on the cluster
+# Run fmriprep on the cluster
 
 Written by CPP lab people
 
@@ -24,8 +24,19 @@ here the example is with `fmriprp version 21.0.1` but check for newer version, l
 ```bash
 datalad install https://github.com/ReproNim/containers.git
 
-datalad get containers/images/bids/bids-fmriprep--21.0.1.sing
+cd containers
+
+datalad get images/bids/bids-fmriprep--21.0.1.sing
 ```
+
+In case you have installe the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
+
+```bash
+# go to the repo folder
+cd path/to/containers
+
+datald update --merge
+``````
 
 Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`.
 
@@ -144,9 +155,7 @@ should consider as `bold` as `T1w`.
 The one below corresponds to the fMRIprep default (also available inside this
 repo).
 
-See this part of the FAQ for more info:
-
-https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep
+See this part of the FAQ for more info [here](https://fmriprep.org/en/21.0.2/faq.html#how-do-I-select-only-certain-files-to-be-input-to-fMRIPrep)
 
 ```json
 {% include "bids_filter_file.json" %}
