@@ -19,4 +19,4 @@ To get an account and connect, follow the instructions in the
 
 ### How can I connect to a cluster from outside the UCLouvain network?
 
-Use a a VPN to connect as-if you are within the UCLouvain network. Check [how to use UCLouvain VPN](https://intranet.uclouvain.be/fr/myucl/services-informatiques/vpn.html) 
+Use a a VPN to connect as-if you are within the UCLouvain network. Check [how to use UCLouvain VPN](https://intranet.uclouvain.be/fr/myucl/services-informatiques/vpn.html)

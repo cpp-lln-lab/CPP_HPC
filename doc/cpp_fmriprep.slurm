@@ -22,22 +22,22 @@
 # writtent by CPP people
 #
 # Submission command for Lemaitre3
-# 
+#
 # sbatch cpp_fmriprep.slurm <subjID> <TaskName>
-# 
+#
 # examples:
 # - 1 subject 1 task
 # sbatch cpp_fmriprep.slurm sub-01 visMotLocalizer
-# 
+#
 # - 1 subject all task
 # sbatch cpp_fmriprep.slurm sub-01 ''
-# 
+#
 # - all subjects 1 task
 # sbatch cpp_fmriprep.slurm '' visMotLocalizer
-# 
+#
 # - multiple subjects
 # sbatch cpp_fmriprep.slurm 'sub-01 sub-02' visMotLocalizer
-# 
+#
 # - multiple tasks
 # sbatch cpp_fmriprep.slurm sub-01 'visMotLocalizer audMotLocalizer'
 #
