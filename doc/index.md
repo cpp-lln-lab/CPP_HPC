@@ -10,7 +10,7 @@ the [CECI clusters](http://www.ceci-hpc.be/) available for UCLouvain.
 
 ## FAQ
 
-It is very likely that most of the faq could be answered by [CECI documentation](https://support.ceci-hpc.be/doc/)
+It is very likely that most of the FAQ could be answered by [CECI documentation](https://support.ceci-hpc.be/doc/)
 
 ### How can get a ceci account and connect to a cluster?
 
