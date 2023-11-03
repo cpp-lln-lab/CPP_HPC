@@ -20,7 +20,7 @@ docs_dir: doc
 
 # Pages
 nav:
-- Welcome: index.md
+- Welcome and FAQ: index.md
 - HPC UCLouvain (CECI):
   - overview: overview.md
   - cluster code snippets: cluster_code_snippets.md
