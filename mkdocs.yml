@@ -14,7 +14,7 @@ theme:
     primary: light blue
     accent: light blue
   features:
-    - navigation.expand
+  - navigation.expand
 
 docs_dir: doc
 

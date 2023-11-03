@@ -22,18 +22,18 @@
 # writtent by CPP people
 #
 # Submission command for Lemaitre3
-# 
+#
 # sbatch cpp_mriqc.slurm <subjID>
-# 
+#
 # examples:
 # - 1 subject
-# sbatch cpp_mriqc.slurm sub-01 
-# 
+# sbatch cpp_mriqc.slurm sub-01
+#
 # - all subjects
 # sbatch cpp_mriqc.slurm ''
-# 
+#
 # - multiple subjects
-# sbatch cpp_mriqc.slurm 'sub-01 sub-02' 
+# sbatch cpp_mriqc.slurm 'sub-01 sub-02'
 #
 # - submit all the subjects (1 per job) all at once
 # read subj list to submit each to a job
@@ -73,4 +73,4 @@ singularity run --cleanenv \
         "${path_to_singularity_image}" \
             /data \
             /out \
-            participant --participant-label "${subjID}" 
+            participant --participant-label "${subjID}"

@@ -22,7 +22,7 @@
 # writtent by CPP people
 #
 # Submission command for Lemaitre3 after running mriqc for each participant
-# 
+#
 # sbatch cpp_mriqc_group.slurm
 
 # create jobs_report folder in case they don't exist
