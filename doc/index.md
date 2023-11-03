@@ -15,7 +15,7 @@ It is very likely that most of the FAQ could be answered by [CECI documentation]
 ### How can get a ceci account and connect to a cluster?
 
 To get an account and connect, follow the instructions in the
-[documentation](https://support.ceci-hpc.be/doc/).
+[CECI documentation](https://support.ceci-hpc.be/doc/).
 
 ### How can I connect to a cluster from outside the UCLouvain network?
 
