@@ -4,8 +4,8 @@
 #SBATCH --time=9:00:00 # hh:mm:ss
 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=9
-#SBATCH --mem-per-cpu=10000 # megabytes
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=20000 # megabytes
 #SBATCH --partition=batch,debug
 
 #SBATCH --mail-user=marco.barilari@uclouvain.be
@@ -14,10 +14,10 @@
 
 #SBATCH --comment=project-name
 
-#export OMP_NUM_THREADS=9
-#export MKL_NUM_THREADS=9
+#export OMP_NUM_THREADS=4
+#export MKL_NUM_THREADS=4
 
-## CPP frmiprep script for CECI cluster
+## CPP frmiprep script for CECI cluster v0.2.0
 #
 # writtent by CPP people
 #
