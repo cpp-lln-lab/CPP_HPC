@@ -27,6 +27,7 @@ nav:
   - install datalad on the cluster: install_datalad.md
   - run fmriprep: run_fmriprep.md
   - run mriqc: run_mriqc.md
+  - run bids-HCPpipelines: run_bids-hcpipelines.md
 - Contributing: contributing.md
 - Archive:
   - fmriprep cluster workshop (2023):
