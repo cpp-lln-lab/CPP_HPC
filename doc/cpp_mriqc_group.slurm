@@ -21,7 +21,7 @@
 #
 # writtent by CPP people
 #
-# Submission command for Lemaitre3 after running mriqc for each participant
+# Submission command for Lemaitre4 after running mriqc for each participant
 #
 # sbatch cpp_mriqc_group.slurm
 

@@ -2,7 +2,7 @@
 
 To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 
-- First of all access one the clusters (this has been tried on _Lemaitre3_)
+- First of all access one the clusters (this has been tried on _Lemaitre4_)
 - Upgrade `pip`.
 
 ```bash

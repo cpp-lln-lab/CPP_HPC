@@ -71,7 +71,11 @@ to choose the cluster that best meets your necessities)
 
 ThrFor example two clusters with different characteristics (part of the CECI cluster):
 
-##### Lemaitre3
+##### Lemaitre3 
+
+!!! Warning 
+
+    SHUTDOWN FORM JULY 1ST 2024 AND REPLACED BY LEMAITRE4 !!!!!
 
 - Louvain-la-Neuve
 - Nodes 96 GB RAM

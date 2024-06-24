@@ -21,7 +21,7 @@
 #
 # writtent by CPP people
 #
-# Submission command for Lemaitre3
+# Submission command for Lemaitre4
 #
 # sbatch cpp_fmriprep.slurm <subjID> <TaskName>
 #

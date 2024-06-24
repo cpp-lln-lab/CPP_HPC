@@ -38,7 +38,7 @@ cd path/to/containers
 datald update --merge
 ``````
 
-Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`.
+Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`. !!! TO CHECK ON LEMAITRE4
 
 ```bash
 datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
@@ -70,7 +70,7 @@ Content of the `cpp_fmriprep.slurm` file (download and edit from [here](cpp_fmri
 On the cluster prompt, submit the jobs as:
 
 ```bash
-# Submission command for Lemaitre3
+# Submission command for Lemaitre4
 
 # USAGE on cluster:
 

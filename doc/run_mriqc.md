@@ -43,7 +43,7 @@ cd path/to/containers
 datald update --merge
 ``````
 
-Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`.
+Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`. !! TO CHECK ON LEMAITRE4
 
 ```bash
 datalad unlock containers/images/bids/bids-mriqc--23.1.0.sing
@@ -75,7 +75,7 @@ Content of the `cpp_mriqc.slurm` file (download and edit from [here](cpp_mriqc.s
 On the cluster prompt, submit the jobs as:
 
 ```bash
-# Submission command for Lemaitre3
+# Submission command for Lemaitre4
 
 # USAGE on cluster:
 
@@ -109,7 +109,7 @@ Content of the `cpp_mriqc_group.slurm` file (download and edit from [here](cpp_m
 On the cluster prompt, submit the jobs as:
 
 ```bash
-# Submission command for Lemaitre3
+# Submission command for Lemaitre4
 
 # USAGE on cluster:
 
