@@ -17,7 +17,7 @@
 #export OMP_NUM_THREADS=9
 #export MKL_NUM_THREADS=9
 
-## CPP MRIqc script for CECI cluster
+## CPP MRIqc script for CECI cluster v0.2.0
 #
 # writtent by CPP people
 #

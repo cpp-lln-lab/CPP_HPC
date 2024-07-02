@@ -45,7 +45,7 @@ cd YOUR-CLONED-REPO
 datalad get .
 ```
 
-it won't probably work since ssh keys to github/gin/etc has to be set up. 
+it won't probably work since ssh keys to github/gin/etc has to be set up.
 
 Set up the einviroment as you did on your personal computer and remebere that if your password is not working is is possible that github/gin/etc are expecting the token code you have to create for each machine.
 
