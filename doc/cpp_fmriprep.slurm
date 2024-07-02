@@ -62,7 +62,7 @@ subjID=$1
 TaskName=$2
 
 # "latest" or procide specific version number
-FMRIPREP_VERSION="23.1.4"
+FMRIPREP_VERSION="24.0.0"
 
 # set username to locate scratch folder
 ceci_username="marcobar"
@@ -87,15 +87,15 @@ singularity run --cleanenv \
     -B "${bids_dir}":/bids_dir \
     -B "${output_dir}":/output \
     -B "${freesurfer_license_folder}":/freesurfer_license \
-        "${path_to_singularity_image}" \
-            /bids_dir \
-            /output \
-            participant --participant-label "${subjID}" \
-            --task "${TaskName}" \
-            --work-dir /scratch_dir/work-fmriprep \
-            --fs-license-file /freesurfer_license/license.txt \
-            --output-spaces MNI152NLin2009cAsym T1w \
-            --dummy-scans ${nb_dummy_scans} \
-            --notrack \
-            --skip_bids_validation \
-            --stop-on-first-crash
+    "${path_to_singularity_image}" \
+    /bids_dir \
+    /output \
+    participant --participant-label "${subjID}" \
+    --task "${TaskName}" \
+    --work-dir /scratch_dir/work-fmriprep/"${subjID}" \
+    --fs-license-file /freesurfer_license/license.txt \
+    --output-spaces MNI152NLin2009cAsym T1w \
+    --dummy-scans ${nb_dummy_scans} \
+    --notrack \
+    --skip_bids_validation \
+    --stop-on-first-crash
