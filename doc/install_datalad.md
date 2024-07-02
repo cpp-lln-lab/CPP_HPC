@@ -10,24 +10,25 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 pip3 install --user --upgrade pip
 ```
 
-- Follow the
-  [datalad handbook](http://handbook.datalad.org/en/latest/intro/installation.html#norootinstall)
+- Following the guide from [datalad handbook](http://handbook.datalad.org/en/latest/intro/installation.html#norootinstall)
   installation for HPC (no root access) or copy-paster the code below.
 
 ```bash
-# get anaconda and install it
+# get anaconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# install it
 bash Miniconda3-latest-Linux-x86_64.sh
-conda install -c conda-forge datalad
 ```
+
+Check that conda is installed with `conda --version` and try again.
 
 If this outputs that `conda` is command not found, try:
 
 ```bash
-export PATH="/home/ucl/irsp/YOUR-USER-NAME/miniconda3/bin:$PATH"
+source .bashrc
 ```
-
-Check that conda is installed with `conda --version` and try again.
+Install datalad
 
 ```bash
 conda install -c conda-forge datalad
@@ -44,7 +45,13 @@ cd YOUR-CLONED-REPO
 datalad get .
 ```
 
-- If you need to create an ssh key follow this on
+it won't probably work since ssh keys to github/gin/etc has to be set up. 
+
+Set up the einviroment as you did on your personal computer and remebere that if your password is not working is is possible that github/gin/etc are expecting the token code you have to create for each machine.
+
+Some usefule links and notes (but not very tidy):
+
+If you need to create an ssh key follow this on
   [github website](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
   or just type:
