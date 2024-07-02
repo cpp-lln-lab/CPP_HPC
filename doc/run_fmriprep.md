@@ -19,17 +19,17 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
 - get the fmriprep singularity image as follow:
 
-here the example is with `fmriprp version 21.0.1` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
+here the example is with `fmriprp version 24.0.0` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
 
 ```bash
-datalad install https://github.com/ReproNim/containers.git
+datalad install -s https://github.com/ReproNim/containers.git ~/tools/containers
 
-cd containers
+cd tools/containers
 
-datalad get images/bids/bids-fmriprep--21.0.1.sing
+datalad get images/bids/bids-fmriprep--24.0.0.sing
 ```
 
-In case you have installe the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
+In case you have installed the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
 
 ```bash
 # go to the repo folder
@@ -41,7 +41,7 @@ datald update --merge
 Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`. !!! TO CHECK ON LEMAITRE4
 
 ```bash
-datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
+datalad unlock containers/images/bids/bids-fmriprep--24.0.0.sing
 ```
 
   - get your `freesurfer` license (user specific) for free [here](https://surfer.nmr.mgh.harvard.edu/registration.html) and move it to the cluster
@@ -124,7 +124,7 @@ sbatch --job-name=fmriprep_trial \
     “singularity run --cleanenv \
         -B /scratch/users/m/a/marcobar:/scratch \
         -B ~/sing_temp:/sing_temp \
-        ~/sing_temp/containers/images/bids/bids-fmriprep--21.0.1.sing \
+        ~/sing_temp/containers/images/bids/bids-fmriprep--24.0.0.sing \
         /sing_temp/raw \
         /sing_temp/fmriprep \
         participant \

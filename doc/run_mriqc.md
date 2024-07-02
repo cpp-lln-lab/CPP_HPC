@@ -24,14 +24,14 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
 - get the fmriprep singularity image as follow:
 
-here the example is with `MRIqc version 23.1.0` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
+here the example is with `MRIqc version 24.0.0` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
 
 ```bash
 datalad install https://github.com/ReproNim/containers.git
 
 cd containers
 
-datalad get images/bids/bids-mriqc--23.1.0.sing
+datalad get images/bids/bids-mriqc--24.0.0.sing
 ```
 
 In case you have installe the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
@@ -46,7 +46,7 @@ datald update --merge
 Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`. !! TO CHECK ON LEMAITRE4
 
 ```bash
-datalad unlock containers/images/bids/bids-mriqc--23.1.0.sing
+datalad unlock containers/images/bids/bids-mriqc--24.0.0.sing
 ```
 
 ## Submit a MRIqc job via a `slurm` script
