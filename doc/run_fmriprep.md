@@ -15,7 +15,8 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 
 ## Prepare to run fmriprep on the cluster
 
-- have your data on the cluster
+- have your data on the cluster and unlock them if they are managed by datalad
+- get your `freesurfer` license (user specific) for free [here](https://surfer.nmr.mgh.harvard.edu/registration.html) and move it to the cluster at `~/tools`
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
 - get the fmriprep singularity image as follow:
 
@@ -38,13 +39,11 @@ cd path/to/containers
 datald update --merge
 ``````
 
-Depending on the cluster “unlock” is needed or not. No need for `lemaitre3`. !!! TO CHECK ON LEMAITRE4
+Depending on the cluster “unlock” is needed or not. No need for `lemaitre4`.
 
 ```bash
 datalad unlock containers/images/bids/bids-fmriprep--24.0.0.sing
 ```
-
-  - get your `freesurfer` license (user specific) for free [here](https://surfer.nmr.mgh.harvard.edu/registration.html) and move it to the cluster
 
 ## Submit a fmriprep job via a `slurm` script
 
@@ -60,7 +59,7 @@ Content of the `cpp_fmriprep.slurm` file (download and edit from [here](cpp_fmri
 !!! Warning
 
     1. Read the fmriprep documentation to know what you are doing and how the arguments of the run call effects the results
-    2. All the paths and email are set afte Marco's users for demosntration.
+    2. All the paths and email are set afte Marco's users for demosntration. Change them for your user.
     3. Edit the scripts with the info you need to make it run for your user from top to buttom of the script, do not over look the first "commented" chunk cause it is not a real commented section (check the email and job report path, data paths and the `username` etc.).
 
 ```bash
