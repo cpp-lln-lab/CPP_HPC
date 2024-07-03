@@ -10,14 +10,14 @@
 
 #SBATCH --mail-user=marco.barilari@uclouvain.be
 #SBATCH --mail-type=ALL
-#SBATCH --output=/home/ucl/irsp/marcobar/jobs_report/fmriprep_job-%j.txt
+#SBATCH --output=/home/ucl/cosy/marcobar/jobs_report/fmriprep_job-%j.txt
 
 #SBATCH --comment=project-name
 
 #export OMP_NUM_THREADS=4
 #export MKL_NUM_THREADS=4
 
-## CPP frmiprep script for CECI cluster v0.2.0
+## CPP frmiprep script for CECI cluster v0.3.0
 #
 # writtent by CPP people
 #
@@ -70,11 +70,15 @@ ceci_username="marcobar"
 # set fmriprep arguments
 nb_dummy_scans=0
 
+# cluster paths
 path_to_singularity_image="$HOME/tools/containers/images/bids/bids-fmriprep--${FMRIPREP_VERSION}.sing"
-scratch_dir="/scratch/users/m/a/${ceci_username}"
-bids_dir="$HOME/fmriprep_trial/raw"
-output_dir="$HOME/fmriprep_trial/derivatives/fmriprep"
-freesurfer_license_folder="$HOME/tools/freesurfer_license"
+scratch_dir=$GLOBALSCRATCH
+freesurfer_license_folder="$HOME/tools"
+
+# data paths
+root_dir="$HOME/path-to-project-yoda-fodler"
+bids_dir="$root_dir/inputs/raw"
+output_dir="$root_dir/outputs/derivatives/fmriprep"
 
 # make the scratch folder, here there is no limit space and fmriprep can store stuff in case of crash and do not start from zero again
 mkdir -p "${scratch_dir}"/work-fmriprep
@@ -99,3 +103,8 @@ singularity run --cleanenv \
     --notrack \
     --skip_bids_validation \
     --stop-on-first-crash
+
+
+# more useful options to keep in mind:
+# 
+# --fs-no-reconall # skip freesurfer segmentation
