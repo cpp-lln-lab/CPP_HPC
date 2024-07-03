@@ -16,7 +16,7 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 
 ## Prepare to run MRIqc on the cluster
 
-- have your data on the cluster
+- have your data on the cluster and unlock them if they are managed by datalad
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
 - get the fmriprep singularity image as follow:
 
