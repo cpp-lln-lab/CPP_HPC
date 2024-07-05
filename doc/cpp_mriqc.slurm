@@ -21,9 +21,19 @@
 #
 # writtent by CPP people
 #
-# Submission command for Lemaitre4
+# USAGE on cluster:
 #
-# sbatch cpp_mriqc_group.slurm
+# sbatch cpp_mriqc.slurm <subjID>
+#
+# examples:
+# - 1 subject
+#
+# sbatch cpp_mriqc.slurm sub-01
+#
+# submit all the subjects (1 per job) all at once
+# read subj list to submit each to a job for all the tasks
+# !!! to run from within `raw` folder
+# ls -d sub* | xargs -n1 -I{} sbatch path/to/cpp_mriqc.slurm {}
 
 # create jobs_report folder in case they don't exist
 mkdir -p $HOME/jobs_report/
