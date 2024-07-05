@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../cluster_code_snippets/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>overview - CPP lab HPC guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CPP lab HPC guide" class="md-header__button md-logo" aria-label="CPP lab HPC guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CPP lab HPC guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cpp-lln-lab/CPP_HPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cpp-lln-lab/CPP_HPC
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CPP lab HPC guide" class="md-nav__button md-logo" aria-label="CPP lab HPC guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CPP lab HPC guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cpp-lln-lab/CPP_HPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cpp-lln-lab/CPP_HPC
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome and FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HPC UCLouvain (CECI)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            HPC UCLouvain (CECI)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#practical-info-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical info-Contact
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical info-Contact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ceci" class="md-nav__link">
+    <span class="md-ellipsis">
+      CÉCI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CÉCI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cism" class="md-nav__link">
+    <span class="md-ellipsis">
+      CISM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-servers-one-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Servers (one node)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Servers (one node)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smcs34" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMCS3&amp;4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brufence-et-cesam-lagrange-shut-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brufence et CeSAM (Lagrange shut down)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pellican" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pellican
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-performance-computing-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Performance Computing (cluster)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High Performance Computing (cluster)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lemaitre3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lemaitre3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manneback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manneback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster_code_snippets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cluster code snippets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_datalad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    install datalad on the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run_fmriprep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run fmriprep
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run_mriqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run mriqc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    fmriprep cluster workshop (2023)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            fmriprep cluster workshop (2023)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/fmriprep_cluster_workshop_2023/joint_meeting_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meeting notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/fmriprep_cluster_workshop_2023/canada_connect_cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Canada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/rookie_experience_2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rookie experience (2019)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/running_fmriprep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fmriprep notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#practical-info-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical info-Contact
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical info-Contact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ceci" class="md-nav__link">
+    <span class="md-ellipsis">
+      CÉCI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CÉCI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cism" class="md-nav__link">
+    <span class="md-ellipsis">
+      CISM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-servers-one-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Servers (one node)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Servers (one node)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smcs34" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMCS3&amp;4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brufence-et-cesam-lagrange-shut-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brufence et CeSAM (Lagrange shut down)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pellican" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pellican
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-performance-computing-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Performance Computing (cluster)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High Performance Computing (cluster)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lemaitre3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lemaitre3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manneback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manneback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="overview"><a class="toclink" href="#overview">Overview</a><a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
+<p>To contribute see <a href="https://cpp-lln-lab.github.io/CPP_HPC/contributing/">here</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some of the information on this page may be outdated.</p>
+</div>
+<h2 id="practical-info-contact"><a class="toclink" href="#practical-info-contact">Practical info-Contact</a><a class="headerlink" href="#practical-info-contact" title="Permanent link">#</a></h2>
+<h3 id="ceci"><a class="toclink" href="#ceci">CÉCI</a><a class="headerlink" href="#ceci" title="Permanent link">#</a></h3>
+<p>the "Consortium des Équipements de Calcul Intensif"</p>
+<ul>
+<li>Account gives access to the clusters in French Speaking Belgium (Liege, Namur,
+  Brussels, Louvain La Neuve)</li>
+<li><a href="http://www.ceci-hpc.be/clusters.html">http://www.ceci-hpc.be/clusters.html</a></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>CECI has a “Big data” survey on their website (first thing in their
+home page). They’re going to install a new cluster in Brussels and they’re
+asking for people needs. If people don’t need to process big data, a regular
+cluster will be installed. If people report that they will need to manage huge
+amounts of data, a Big-data friendly cluster will be installed. Spread this
+information.</p>
+</div>
+<h4 id="cism"><a class="toclink" href="#cism">CISM</a><a class="headerlink" href="#cism" title="Permanent link">#</a></h4>
+<p>“CISM” stand for “Calcul Intensif et Stockage de Masse” [Center for High
+Performance Computing and Mass Storage]</p>
+<ul>
+<li>CISM is part of the CECI</li>
+<li>https://uclouvain.be/en/research/cism/high-performance-computing.html</li>
+<li><a href="https://uclouvain.be/en/research/cism">https://uclouvain.be/en/research/cism</a></li>
+<li>Mail: egs-cism@listes.uclouvain.be</li>
+<li>Contacts:</li>
+<li>thomas.keutgen@uclouvain.be (Responsible CISM- meeting guy)</li>
+<li>damien.francois@uclouvain.be (other meeting guy)</li>
+<li>Account gives access to the interactive servers + Mannebeck cluster (not run
+  by the CECI)</li>
+</ul>
+<h3 id="interactive-servers-one-node"><a class="toclink" href="#interactive-servers-one-node">Interactive Servers (one node)</a><a class="headerlink" href="#interactive-servers-one-node" title="Permanent link">#</a></h3>
+<p><a href="https://uclouvain.be/en/research/cism/interactive-servers.html">https://uclouvain.be/en/research/cism/interactive-servers.html</a></p>
+<p>One node, but more powerful than a personal computer and apparently there is matlab installed.</p>
+<h4 id="smcs34"><a class="toclink" href="#smcs34">SMCS3&amp;4</a><a class="headerlink" href="#smcs34" title="Permanent link">#</a></h4>
+<ul>
+<li>256 GB RAM</li>
+<li>Those 2 servers are dedicated to statistical applications. They are managed in
+  collaboration with SMCS (support methodologie et calcul statistique)</li>
+</ul>
+<h4 id="brufence-et-cesam-lagrange-shut-down"><a class="toclink" href="#brufence-et-cesam-lagrange-shut-down">Brufence et CeSAM (Lagrange shut down)</a><a class="headerlink" href="#brufence-et-cesam-lagrange-shut-down" title="Permanent link">#</a></h4>
+<ul>
+<li>256 GB RAM</li>
+<li>These interactive machines are dedicated to Matlab use.</li>
+</ul>
+<h4 id="pellican"><a class="toclink" href="#pellican">Pellican</a><a class="headerlink" href="#pellican" title="Permanent link">#</a></h4>
+<ul>
+<li>256 GB RAM</li>
+<li>Has installed Matlab 2017</li>
+</ul>
+<h3 id="high-performance-computing-cluster"><a class="toclink" href="#high-performance-computing-cluster">High Performance Computing (cluster)</a><a class="headerlink" href="#high-performance-computing-cluster" title="Permanent link">#</a></h3>
+<p>Cluster, various nodes to work in parallel.</p>
+<p>Each cluster has a specific function/characteristic (big acceleration, big
+memory capacity, large parallel jobs, very large number of small jobs…you have
+to choose the cluster that best meets your necessities)</p>
+<p>ThrFor example two clusters with different characteristics (part of the CECI cluster):</p>
+<h5 id="lemaitre3"><a class="toclink" href="#lemaitre3">Lemaitre3</a><a class="headerlink" href="#lemaitre3" title="Permanent link">#</a></h5>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>SHUTDOWN FORM JULY 1ST 2024 AND REPLACED BY LEMAITRE4 !!!!!</p>
+</div>
+<ul>
+<li>Louvain-la-Neuve</li>
+<li>Nodes 96 GB RAM</li>
+<li>dedicated to large parallel jobs (HPC), with a fast interconnect and a fast
+  storage system</li>
+<li>Access CISM+CECI users</li>
+<li>It has installed Freesurfer, PyMVPA and singularity (to use fmriprep, mriqc etc.)</li>
+</ul>
+<h5 id="manneback"><a class="toclink" href="#manneback">Manneback</a><a class="headerlink" href="#manneback" title="Permanent link">#</a></h5>
+<ul>
+<li>Nodes 4 GB RAM</li>
+<li>Access CISM users only</li>
+<li>dedicated to High-Throughput Computing (HTC), suited for running a very large
+  number of small jobs</li>
+</ul>
+<h3 id="problems"><a class="toclink" href="#problems">Problems</a><a class="headerlink" href="#problems" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use matlab in the cluster: Only have license for 4 tokens (=licenses) of
+Matlab and each node uses a license (UCL has 100 Matlab token but CECI? is
+only allowed to use 4 tokens). The 4 tokens to use Matlab are now in the
+interactive serves (none is on the cluster)</p>
+<h3 id="possible-solutions"><a class="toclink" href="#possible-solutions">Possible Solutions</a><a class="headerlink" href="#possible-solutions" title="Permanent link">#</a></h3>
+<ul>
+<li>Compile</li>
+<li>Informatics department student to change the language of our script</li>
+<li>Octave (free) (eg bidspm via docker/singularity)</li>
+<li>Buy more licenses:</li>
+<li>Maybe (probably according to Damian) it’s not possible to restrict the
+    access only to us. We have to hope that no one else accesses by hiding
+    this information)</li>
+<li>The price of Matlab license varies depending on the number of tokens you
+    buy. Actually not in UCLouvain, Olivier called 78282 in december 2018 and
+    the price of 1 licence is 100e/year, independent of the number you buy.</li>
+<li>Personal license and Site license exist. The cluster uses Site license.
+    (Students have personal license at a reduced price: they are not allowed to
+    install it if they’re not the only user)</li>
+<li>Lots of people before us have tried to convince UCL to buy more licenses,
+    does not work</li>
+<li>Use pelican interactive server (Very short term solution)</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

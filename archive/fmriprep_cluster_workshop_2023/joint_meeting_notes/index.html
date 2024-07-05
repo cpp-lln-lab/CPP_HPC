@@ -1,0 +1,1055 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../contributing/">
+      
+      
+        <link rel="next" href="../canada_connect_cluster/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>meeting notes - CPP lab HPC guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#joint-meeting-on-fmri-data-st-luc-to-fmriprep" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CPP lab HPC guide" class="md-header__button md-logo" aria-label="CPP lab HPC guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CPP lab HPC guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              meeting notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cpp-lln-lab/CPP_HPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cpp-lln-lab/CPP_HPC
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CPP lab HPC guide" class="md-nav__button md-logo" aria-label="CPP lab HPC guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CPP lab HPC guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cpp-lln-lab/CPP_HPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cpp-lln-lab/CPP_HPC
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome and FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HPC UCLouvain (CECI)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            HPC UCLouvain (CECI)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster_code_snippets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cluster code snippets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install_datalad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    install datalad on the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../run_fmriprep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run fmriprep
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../run_mriqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run mriqc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    fmriprep cluster workshop (2023)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            fmriprep cluster workshop (2023)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    meeting notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    meeting notes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fmriprep" class="md-nav__link">
+    <span class="md-ellipsis">
+      fMRIprep
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fMRIprep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-or-singularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker or Singularity ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-fmriprep-mriqc-on-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running fmriprep / mriqc on the cluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running fmriprep / mriqc on the cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canada_connect_cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Canada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rookie_experience_2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rookie experience (2019)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_fmriprep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fmriprep notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fmriprep" class="md-nav__link">
+    <span class="md-ellipsis">
+      fMRIprep
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fMRIprep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-or-singularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker or Singularity ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-fmriprep-mriqc-on-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running fmriprep / mriqc on the cluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running fmriprep / mriqc on the cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="joint-meeting-on-fmri-data-st-luc-to-fmriprep"><a class="toclink" href="#joint-meeting-on-fmri-data-st-luc-to-fmriprep">Joint Meeting on fMRI data - St Luc to fMRIprep</a><a class="headerlink" href="#joint-meeting-on-fmri-data-st-luc-to-fmriprep" title="Permanent link">#</a></h1>
+<p>Interesting slides &amp; other stuff :</p>
+<ul>
+<li>Remi’s slides on BIDS :
+  <a href="https://remi-gau.github.io/bids_workshop/">https://remi-gau.github.io/bids_workshop/</a></li>
+<li>CECI cluster documentation page :
+  <a href="https://support.ceci-hpc.be/doc/">https://support.ceci-hpc.be/doc/</a></li>
+</ul>
+<h2 id="fmriprep"><a class="toclink" href="#fmriprep">fMRIprep</a><a class="headerlink" href="#fmriprep" title="Permanent link">#</a></h2>
+<p>It is a BIDSapp so there is a classical way to use it.</p>
+<p>See BIDSapps page :
+<a href="https://remi-gau.github.io/bids_workshop/bids_apps.html">https://remi-gau.github.io/bids_workshop/bids_apps.html</a></p>
+<p>Through docker : Everything you do on docker will be done in your terminal.</p>
+<p>For the cluster : you will use “Singularity”, quite similar overall.</p>
+<h3 id="docker-or-singularity"><a class="toclink" href="#docker-or-singularity">Docker or Singularity ?</a><a class="headerlink" href="#docker-or-singularity" title="Permanent link">#</a></h3>
+<p>They are “virtual machines” somehow, you need to tell them a certain mapping
+between your folders in your machine and inside the container.</p>
+<p><em>Careful : Docker by default :</em> inside the virtual machine you are the root user
+(admin), you have to change the permission so that you have write/change
+permissions on the data that will be in your computer. That needs to be done
+before running the conversion/analyses..</p>
+<pre><code class="language-bash">--user &quot;$(id -u):$(id -g)&quot;
+</code></pre>
+<h3 id="usage"><a class="toclink" href="#usage">Usage</a><a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
+<p>fMRIprep has extensive documentation :
+<a href="https://fmriprep.org/en/stable/">https://fmriprep.org/en/stable/</a></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When using fMRIPrep, use the <strong>working directory option </strong>: it
+allows to save “temporary” analytical steps, so that if it crashes/stops, you
+will not need to re-run it again from scratch, it will start again at the point
+where it crashed/was killed/stopped. There are a lot of checkpoints where it can
+re-start.</p>
+<p><code>bash
+--work-dir /tmp</code></p>
+<p>If you use it : it saves all the intermediate steps : that’s a lot of data, so
+you can run out of space.</p>
+<p>Eg. you run participant 1, whenever participant 1 has finished, delete all the
+tmp files.</p>
+<p>Unless you want to try different options and don’t want to start each time from
+scratch, than you can keep it, but once you’ve finished testing options etc you
+delete it all.</p>
+</div>
+<p>Note that fmriprep runs with freesurfer.</p>
+<p>You will not have the data from each step of preprocessing.</p>
+<p>It will give you a .tsv file with the confounds</p>
+<p>Specific options from fMRIPrep that are interesting other than that :</p>
+<ul>
+<li><code>[--stop-on-first-crash]</code></li>
+</ul>
+<p>Think about using the BIDS validator on your dataset beforehand. Even though by
+default, fmriprep runs a bids validation step (you can ask it to skip that step
+but not recommended).</p>
+<p>You can (should) directly copy/paste the “methods” section from the fmriprep
+outputs : it writes down every single step and options (and versions) you used
+for preprocessing.</p>
+<p>Example of a script of fmriprep on container :</p>
+<p><a href="https://github.com/cpp-lln-lab/CPP_brewery/blob/master/remi/containers/code/run_fmriprep.sh">https://github.com/cpp-lln-lab/CPP_brewery/blob/master/remi/containers/code/run_fmriprep.sh</a></p>
+<h3 id="running-fmriprep-mriqc-on-the-cluster"><a class="toclink" href="#running-fmriprep-mriqc-on-the-cluster">Running fmriprep / mriqc on the cluster</a><a class="headerlink" href="#running-fmriprep-mriqc-on-the-cluster" title="Permanent link">#</a></h3>
+<p>What’s amazing is that you can just run it and do not worry about it.
+You can ask it to send you emails when the job starts/stops/crashes…</p>
+<p>There is no user interface, you need to get familiar
+with using terminal lines only, and get used to some specific lines.</p>
+<p>You can use it anywhere in the world.</p>
+<ol>
+<li>Need to use Singularity</li>
+<li><a href="https://hackmd.io/b4nfl4ZFSSOqD6lM6salVw?both">https://hackmd.io/b4nfl4ZFSSOqD6lM6salVw?both</a></li>
+</ol>
+<p>We should look at our own cluster specifications but globally it should be
+similar.</p>
+<h4 id="main-steps"><a class="toclink" href="#main-steps">Main steps</a><a class="headerlink" href="#main-steps" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>From your terminal window : you want to connect with ssh name@cluster &amp; asks
+   your password (and you will need ssh keys). Now you are in your cluster</p>
+</li>
+<li>
+<p>For the CECI see the doc:</p>
+<p><a href="https://support.ceci-hpc.be/doc/_contents/QuickStart/ConnectingToTheClusters/FromAUnixComputer.html">https://support.ceci-hpc.be/doc/_contents/QuickStart/ConnectingToTheClusters/FromAUnixComputer.html</a></p>
+</li>
+<li>
+<p>You need to load the things you need to use (each time). Depending on your
+   cluster, there will be modules available already ,but you need to call it to
+   retrieve it.</p>
+</li>
+</ol>
+<p>Look at the available modules and retrieve the needed modules. Module avail :
+   list the modules available // module load : loads the module you want</p>
+<ol>
+<li>
+<p>Transferring files from your computer to your cluster</p>
+</li>
+<li>
+<p>Secure copy : <code>scp</code>. To copy individual files / directories from your computer
+   to the cluster. <code>scp &lt;name file&gt;</code> and where you want to copy it (see the
+   documentation above). This is for small files.</p>
+</li>
+<li>Rsync : syncing.</li>
+<li>
+<p>Datalad : easiest way because there is version control. You can pull the data
+   from there to the cluster. You need to have datalad on the cluster or install
+   it. (we should check that) Here how to install it on the CECI cluster
+   https://github.com/cpp-lln-lab/CPP_HPC</p>
+</li>
+<li>
+<p>Submitting jobs</p>
+</li>
+<li>A job is a batchscript that you will submit to the cluster.</li>
+<li>The CECI has a wizard to help you create those script:
+   <a href="https://www.ceci-hpc.be/scriptgen.html">https://www.ceci-hpc.be/scriptgen.html</a></li>
+<li>Depending on who is using the cluster in the moment, how many people, what
+    you have used before, you will be scheduled at a certain moment. For
+    instance, if you haven’t used the cluster in a long time they give you
+    priority.</li>
+<li>You need to decide how much time the analysis is going to need. For fmriprep
+    &amp; mriqc there are online some examples of how long it should take. After
+    tests you can check how much time it took, how much memory etc… and then
+    adjust (stats from your analysis). If the time you allocated is not enough,
+    you get kicked out, it stops. That’s when the work directory is super
+    important. For the kind of analyses we are doing we can ask a bit more time
+    than what you actually need to be sure, as long as you don’t need the
+    cluster super often.</li>
+</ol>
+<p>Submitting jobs with slurm on the CECI Cluster :</p>
+<p><a href="https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html">https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html</a></p>
+<p>If you want to write a script you can use a line that opens an editor within the
+terminal.</p>
+<p>Example : <code>nano sbatch simplejob.sh</code></p>
+<p>Example below from Michele’s HackMD</p>
+<pre><code class="language-bash">
+#!/bin/bash That’s a general line you have to put
+
+#SBATCH --time=00:05:00  Specify the time
+
+#SBATCH --account=def-flepore Specify the account
+
+echo 'Hello, world!' And your script…
+
+sleep 20
+
+</code></pre>
+<p><code>sq</code> gives you the information on the jobs that you have asked to run.</p>
+<p>But instead of that you just ask for emails because <code>sq</code> is computationally
+greedy</p>
+<p>For this you put the following lines at the very top of your script</p>
+<pre><code class="language-bash">    #SBATCH --mail-user=michele.maclean@umontreal.ca
+    #SBATCH --mail-type=BEGIN
+    #SBATCH --mail-type=END
+    #SBATCH --mail-type=FAIL
+    #SBATCH --mail-type=REQUEUE
+    #SBATCH --mail-type=ALL
+</code></pre>
+<p>How to cancel a job :</p>
+<p><code>scancel &lt;jobid&gt;</code></p>
+<h5 id="output-files"><a class="toclink" href="#output-files">Output files</a><a class="headerlink" href="#output-files" title="Permanent link">#</a></h5>
+<p>By default, the outputs go to output files called slurm- with the job ID.</p>
+<p>**Scratch directory **</p>
+<p>After a certain timeline, all the files will be automatically deleted. This
+allows you to have more space and don’t need to worry about deleting your files.
+You will get an email before that.</p>
+<p>The scratch directory will be in the cluster, maybe in the team directory or
+yours depending on the cluster.</p>
+<p>For fmriprep you need to download the singularity image of fmriprep : one that
+works is the reproname container. It has datalad containers for fmriprep/mriqc
+etc..</p>
+<p><a href="https://github.com/ReproNim/containers">https://github.com/ReproNim/containers</a></p>
+<p>You have a container of everything that’s needed to run fmriprep/mriqc on your
+cluster.</p>
+<p>You create a directory with mkdir (make directory), and install the containers
+from repronim. Online they have everything that you need, and you pull the
+images you need. You need datalad installed on the cluster for that.</p>
+<p>You can also use an image for fmriprep that you already have on your computer
+(if you have done that previously, but not recommended if you are beginning this
+process).</p>
+<pre><code class="language-bash">datalad install https://github.com/ReproNim/containers.git
+
+datalad get containers/images/bids/bids-fmriprep--21.0.1.sing
+
+datalad unlock containers/images/bids/bids-fmriprep--21.0.1.sing
+</code></pre>
+<p>Depending on the cluster “unlock” is needed or not.</p>
+<p>For fmriprep &amp; mriqc you need a freesurfer license: user specific (free). It is
+a .txt file.</p>
+<p><a href="https://surfer.nmr.mgh.harvard.edu/registration.html">https://surfer.nmr.mgh.harvard.edu/registration.html</a></p>
+<p>You copy paste it from your computer to the cluster with the secure copy (scp
+command).</p>
+<p><strong>Writing a script</strong></p>
+<p>Idea : have a basic script on github that we modify</p>
+<p>-J : job you want to run</p>
+<p>-account : account you want to use</p>
+<p>-time : time you want</p>
+<p>-n :</p>
+<p>-cpus per task : how much cpus you want to allocate</p>
+<p>In the script have the things you want to load so that you don’t forget and have
+to run it before. You need to load each module each time.</p>
+<p>Singularity run : that’s the main line of the script</p>
+<p><code>\</code> : tells it that the script continues but on another line</p>
+<p>The lines of code for fmriprep are the same, except that you use singularity.</p>
+<p><strong>What’s important :</strong></p>
+<p>you need to mount the files you want to analyze into the
+container. <code>-B</code> : mount what’s in my user into the container. If you don’t do
+that it won’t know where the files are because it would be “stuck” in the image.</p>
+<ul>
+<li>For instance you want to mount the <code>scratch</code> directory, all the folders in the
+  user, and you need to say which image of fmriprep you will use.</li>
+<li>Then you specify where you take the data from, because you mounted your user
+  directory, you can start from that (eg. <code>/maclean/</code>).</li>
+<li>Then the name of your output.</li>
+<li>You specify the participants label.</li>
+<li>Working directory</li>
+<li>License file</li>
+<li>Output space you want (MNI152…)</li>
+<li>Options like skipping bids validation or stop on first scratch etc…</li>
+</ul>
+<p><strong>Launch it :</strong> sbatch fmriprep.sh</p>
+<p><em>Running mriqc : same but the image you need will be mriqc</em></p>
+<p>Options are different but the lines are similar</p>
+<p>CECI Cluster</p>
+<p>Main webpage : <a href="https://www.ceci-hpc.be/">https://www.ceci-hpc.be/</a></p>
+<p>Documentation :
+<a href="https://support.ceci-hpc.be/doc/">https://support.ceci-hpc.be/doc/</a></p>
+<p>Make a script:
+<a href="https://www.ceci-hpc.be/scriptgen.html">https://www.ceci-hpc.be/scriptgen.html</a></p>
+<p>The cluster we will use is most likely <strong>Lemaître3</strong></p>
+<p>To connect to the cluster :</p>
+<p><a href="https://support.ceci-hpc.be/doc/_contents/QuickStart/ConnectingToTheClusters/FromAUnixComputer.html#get-the-private-ceci-key">https://support.ceci-hpc.be/doc/_contents/QuickStart/ConnectingToTheClusters/FromAUnixComputer.html#get-the-private-ceci-key</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
