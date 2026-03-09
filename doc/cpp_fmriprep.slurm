@@ -106,5 +106,5 @@ singularity run --cleanenv \
 
 
 # more useful options to keep in mind:
-# 
+#
 # --fs-no-reconall # skip freesurfer segmentation
