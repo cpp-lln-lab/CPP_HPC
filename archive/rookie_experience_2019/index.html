@@ -1,0 +1,1019 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../fmriprep_cluster_workshop_2023/canada_connect_cluster/">
+      
+      
+        <link rel="next" href="../running_fmriprep/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>rookie experience (2019) - CPP lab HPC guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rookie-experience-with-the-cluster-from-2019" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CPP lab HPC guide" class="md-header__button md-logo" aria-label="CPP lab HPC guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CPP lab HPC guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              rookie experience (2019)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cpp-lln-lab/CPP_HPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cpp-lln-lab/CPP_HPC
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CPP lab HPC guide" class="md-nav__button md-logo" aria-label="CPP lab HPC guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CPP lab HPC guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cpp-lln-lab/CPP_HPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cpp-lln-lab/CPP_HPC
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome and FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HPC UCLouvain (CECI)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            HPC UCLouvain (CECI)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster_code_snippets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cluster code snippets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_datalad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    install datalad on the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run_fmriprep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run fmriprep
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run_mriqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run mriqc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    fmriprep cluster workshop (2023)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            fmriprep cluster workshop (2023)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fmriprep_cluster_workshop_2023/joint_meeting_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meeting notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fmriprep_cluster_workshop_2023/canada_connect_cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Canada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    rookie experience (2019)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    rookie experience (2019)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rookie-experience-with-the-cluster-from-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rookie experience with the cluster (from 2019)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rookie experience with the cluster (from 2019)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-freesurfer-recon-all-stuff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running FreeSurfer recon all stuff
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-check-if-the-job-is-workingsubmitted-successfully" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to check if the job is working/submitted successfully?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-container-stuff-example-with-mriqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running container stuff, example with mriQC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpplab-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPPlab software
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relevant links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running_fmriprep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fmriprep notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rookie-experience-with-the-cluster-from-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rookie experience with the cluster (from 2019)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rookie experience with the cluster (from 2019)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-freesurfer-recon-all-stuff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running FreeSurfer recon all stuff
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-check-if-the-job-is-workingsubmitted-successfully" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to check if the job is working/submitted successfully?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-container-stuff-example-with-mriqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running container stuff, example with mriQC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpplab-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPPlab software
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relevant links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>rookie experience (2019)</h1>
+
+<h3 id="rookie-experience-with-the-cluster-from-2019"><a class="toclink" href="#rookie-experience-with-the-cluster-from-2019">Rookie experience with the cluster (from 2019)</a><a class="headerlink" href="#rookie-experience-with-the-cluster-from-2019" title="Permanent link">#</a></h3>
+<p>Here the <a href="https://support.ceci-hpc.be/doc/">CECI documentation</a> for creating an
+account and accessing the cluster. But please do check in the folder where this
+google doc is saved for quick tips for creating an account.</p>
+<ol>
+<li>
+<p>Access the cluster: things have changed after august 2020, if you had an
+    account before this date you need to follow all the steps explained
+    <a href="https://support.ceci-hpc.be/doc/_contents/QuickStart/ConnectingToTheClusters/FromAUnixComputer.html">here</a>
+    again. It is very important that you follow all the steps in this link (e.g.
+    get a private ceci key, configure ssh, …) They also provide troubleshooting
+    tips.</p>
+</li>
+<li>
+<p>Avoiding providing password/passphrase all the time you access to the
+    cluster:</p>
+</li>
+</ol>
+<p>Doing <code>ssh clustername</code> does not work in a vanilla way as before, you may need
+to insert the pss every time or try this:</p>
+<pre><code class="language-bash">ssh-add -k ~/.ssh/id_rsa.ceci ssh-add -l ssh clustername
+</code></pre>
+<p><code>clutername</code> should be replaced by the cluster you want to join, e.g. lemaitre3</p>
+<p>Finally, if everything is working, the next time one logs in, the following
+should be fine:</p>
+<pre><code class="language-bash">ssh lemaitre3
+</code></pre>
+<ol>
+<li>Troubleshooting: (26/04/2021 onwards)</li>
+</ol>
+<p>Issues with connecting with the cluster.(even after following steps 1 and 2.)</p>
+<p>Solution: Since CISM changed the server gwceci.cism.ucl.ac.be .</p>
+<p>Go to: <code>/Users/your_local_username/.ssh/known_hosts</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In your local machine, you need to go to the folder where you keep the .ssh
+folder. And in that folder you need to navigate to known_hosts. You can type as
+follow in the terminal</p>
+</div>
+<pre><code class="language-bash">atom ~/.ssh/known_hosts
+</code></pre>
+<p>Remove or comment <em>line 4</em> as shown below. According to your known_hosts file,
+the line number can vary. !</p>
+<p>Tip#1: Used Atom, as evident from above, easy to edit, and save.</p>
+<p>Tip#2: While using OpenConnectVPN from home, set preferences to IPV4 (and not
+IPV6).</p>
+<p>Then repeat the step2. You should log in. And if you can log in, that’s all!
+This action will add another line in known<em>hosts document, starting with
+gwceci.cism.ucl.ac.be as can be seen in above _line 6</em>.</p>
+<ol>
+<li>Although one ssh to the cluster, the main folder is the root (cd ~). One can
+    also find which folder you have access to, e.g. if you are under IPSY like
+    most CPP-members, by navigating to:</li>
+</ol>
+<pre><code class="language-bash">cd /home/ucl/irsp/ cd $HOME cd $GLOBALSCRATCH
+</code></pre>
+<ol>
+<li>You can check where you are - which folder is your home in the cluster- with
+    below command</li>
+</ol>
+<pre><code class="language-bash">pwd
+</code></pre>
+<ol>
+<li>Move file to the cluster and back:</li>
+</ol>
+<pre><code class="language-bash">scp -r mydir/ clustername:cluster/dir/
+</code></pre>
+<pre><code class="language-bash">scp -r clustername:cluster/dir/ mydir/
+</code></pre>
+<p>Note: The commands above need to be entered in a terminal that is logged into
+the local machine not in the cluster-logged terminal.</p>
+<p>Example to load a file:</p>
+<pre><code class="language-bash">scp sub-x001_ses-001_T1w.nii
+lemaitre3:/home/ucl/cosy/battal/RhythmCateg/RhythmCateg_Anat
+</code></pre>
+<h4 id="running-freesurfer-recon-all-stuff"><a class="toclink" href="#running-freesurfer-recon-all-stuff">Running FreeSurfer recon all stuff</a><a class="headerlink" href="#running-freesurfer-recon-all-stuff" title="Permanent link">#</a></h4>
+<p>First one would need to create scripts, which should be under this
+<a href="https://support.ceci-hpc.be/doc/_contents/SubmittingJobs/SlurmFAQ.html">format</a>.</p>
+<p>Then follow the above examples for carrying your folder of input into the
+cluster folder.</p>
+<p>Copy from your local to the cluster:</p>
+<pre><code class="language-bash">scp -r MovieBlind_Anatomicals lemaitre3:/home/ucl/irsp/morezk/MovieBlind
+</code></pre>
+<p>Copy from the cluster to the local</p>
+<pre><code class="language-bash">scp -r
+lemaitre3:/home/ucl/irsp/morezk/MovieBlind/MovieBlind_Anatomicals/fs_output
+~/Desktop/
+</code></pre>
+<p>Copy scripts</p>
+<pre><code class="language-bash">scp -r run_reconall.slurm lemaitre3:/home/ucl/irsp/morezk/MovieBlind
+scp -r run_reconall_batch.slurm lemaitre3:/home/ucl/irsp/morezk/MovieBlind
+</code></pre>
+<p>Lastly, when running scripts use sbatch instead of sh</p>
+<p>This is wrong:</p>
+<pre><code class="language-bash">sh ./
+</code></pre>
+<p>Try:</p>
+<pre><code class="language-bash">sbatch submit.slurm
+</code></pre>
+<h4 id="how-to-check-if-the-job-is-workingsubmitted-successfully"><a class="toclink" href="#how-to-check-if-the-job-is-workingsubmitted-successfully">How to check if the job is working/submitted successfully?</a><a class="headerlink" href="#how-to-check-if-the-job-is-workingsubmitted-successfully" title="Permanent link">#</a></h4>
+<p>For more general information please see this
+<a href="https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html">link</a>.</p>
+<p>Some quick and helpful guides:
+<a href="https://slurm.schedmd.com/documentation.html"> slurm workload manager</a></p>
+<p>One can type to check if their job is R: RUNNING, PD:PENDING</p>
+<pre><code class="language-bash">squeue
+</code></pre>
+<p>If one uses <a href="http://www.ceci-hpc.be/scriptgen.html">this</a> website to generate
+their bash script, they will also get a notification email when the job is
+started and done including the <code>job-id</code>.</p>
+<p>How to read the <em>slurm&lt;jobID&gt;.out</em> files?</p>
+<p>.out are error /log files.</p>
+<pre><code class="language-bash">cat slurm $jobID&gt;.out
+</code></pre>
+<h4 id="running-container-stuff-example-with-mriqc"><a class="toclink" href="#running-container-stuff-example-with-mriqc">Running container stuff, example with mriQC</a><a class="headerlink" href="#running-container-stuff-example-with-mriqc" title="Permanent link">#</a></h4>
+<p>To create the singularity image:</p>
+<pre><code class="language-bash">singularity pull --name ~/sing_images/mriqc_0.15.2.sif
+docker://poldracklab/mriqc:0.15.2
+</code></pre>
+<p>To run singularity:</p>
+<pre><code class="language-bash">    singularity run --cleanenv \
+    --bind ~/data/V5_high-res_pilot-1/raw:/data \
+    --bind ~/data/V5_high-res_pilot-1/derivatives/mriqc:/out \
+    ~/sing_images/mriqc_0.15.2.sif \
+    /data /out participant \
+    --participant_label pilot001
+</code></pre>
+<h4 id="resources"><a class="toclink" href="#resources">Resources</a><a class="headerlink" href="#resources" title="Permanent link">#</a></h4>
+<p>Lecture slides on singularity :
+<a href="https://indico.cism.ucl.ac.be/event/74/">Packaging software in portable containers with Singularity</a></p>
+<p>Recorded Event(lecture) :
+<a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MmZkOWM0YTQtN2FhOS00NGJhLWI0MWEtNmRmZWNiOWQyNDJl%40thread.v2/0?context=%7b%22Tid%22%3a%227ab090d4-fa2e-4ecf-bc7c-4127b4d582ec%22%2c%22Oid%22%3a%226677b3f8-ce21-40ac-a3f2-4440ec78487e%22%2c%22IsBroadcastMeeting%22%3atrue%7d">on Teams</a></p>
+<h4 id="tips"><a class="toclink" href="#tips">Tips</a><a class="headerlink" href="#tips" title="Permanent link">#</a></h4>
+<p>Command to navigate the folders and open text files in a terminal “gui”</p>
+<pre><code class="language-bash">mc
+</code></pre>
+<h3 id="other"><a class="toclink" href="#other">Other</a><a class="headerlink" href="#other" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>There is Cloud computing (what Remi was suggesting, virtual machines) and
+  Cluster computing. UCL only supports cluster computing for the moment.</p>
+</li>
+<li>
+<p>To install new software:</p>
+</li>
+<li>
+<p>They can install it</p>
+</li>
+<li>They can be installed in the home directory of the user by the user. (At our
+  own risk)</li>
+</ul>
+<h3 id="cpplab-software"><a class="toclink" href="#cpplab-software">CPPlab software</a><a class="headerlink" href="#cpplab-software" title="Permanent link">#</a></h3>
+<ul>
+<li>Matlab</li>
+<li>SPM</li>
+<li>Conn</li>
+<li>PyMVPA (Python compatible) -installed in Lemaitre 3</li>
+<li>Freesurfer -installed in Lemaitre 3</li>
+<li>FSL</li>
+<li>Mrtrix -installed in HMEM</li>
+</ul>
+<h3 id="relevant-links"><a class="toclink" href="#relevant-links">Relevant links</a><a class="headerlink" href="#relevant-links" title="Permanent link">#</a></h3>
+<p>https://nl.mathworks.com/products/compiler/matlab-runtime.html
+https://en.wikibooks.org/wiki/SPM/Standalone</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
