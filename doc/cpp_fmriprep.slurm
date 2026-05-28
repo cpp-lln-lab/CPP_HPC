@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 #SBATCH --job-name=fMRIprep
 #SBATCH --time=9:00:00 # hh:mm:ss
@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem-per-cpu=20000 # megabytes
-#SBATCH --partition=batch,debug
+#SBATCH --partition=batch
 
 #SBATCH --mail-user=marco.barilari@uclouvain.be
 #SBATCH --mail-type=ALL
@@ -59,10 +59,9 @@ set -e -x -u -o pipefail
 module --force purge
 
 subjID=$1
-TaskName=$2
 
 # "latest" or procide specific version number
-FMRIPREP_VERSION="24.0.0"
+FMRIPREP_VERSION="25.2.5"
 
 # set username to locate scratch folder
 ceci_username="marcobar"
@@ -71,7 +70,7 @@ ceci_username="marcobar"
 nb_dummy_scans=0
 
 # cluster paths
-path_to_singularity_image="$HOME/tools/containers/images/bids/bids-fmriprep--${FMRIPREP_VERSION}.sing"
+path_to_singularity_image="$HOME/tools/containers/images/bids/bids-fmriprep--${FMRIPREP_VERSION}.sif"
 scratch_dir=$GLOBALSCRATCH
 freesurfer_license_folder="$HOME/tools"
 
@@ -80,7 +79,7 @@ root_dir="$HOME/path-to-project-yoda-fodler"
 bids_dir="$root_dir/inputs/raw"
 output_dir="$root_dir/outputs/derivatives/fmriprep"
 
-# make the scratch folder, here there is no limit space and fmriprep can store stuff in case of crash and do not start from zero again
+# make the scratch folder, here there is no limit space and fmriprep can store temp files in case of crash and it does not start from zero again
 mkdir -p "${scratch_dir}"/work-fmriprep
 
 # create output folder in case it does not exists

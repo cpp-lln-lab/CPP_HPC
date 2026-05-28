@@ -20,14 +20,14 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
 - get the fmriprep singularity image as follow:
 
-here the example is with `fmriprp version 24.0.0` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
+here the example is with `fmriprp version 25.2.5` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
 
 ```bash
 datalad install -s https://github.com/ReproNim/containers.git ~/tools/containers
 
 cd tools/containers
 
-datalad get images/bids/bids-fmriprep--24.0.0.sing
+datalad get images/bids/bids-fmriprep--25.2.5.sif
 ```
 
 In case you have installed the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
@@ -42,7 +42,7 @@ datald update --merge
 Depending on the cluster “unlock” is needed or not. No need for `lemaitre4`.
 
 ```bash
-datalad unlock containers/images/bids/bids-fmriprep--24.0.0.sing
+datalad unlock containers/images/bids/bids-fmriprep--25.2.5.sif
 ```
 
 ## Submit a fmriprep job via a `slurm` script

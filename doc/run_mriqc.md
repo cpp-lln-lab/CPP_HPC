@@ -16,18 +16,18 @@ To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
 
 ## Prepare to run MRIqc on the cluster
 
-- have your data on the cluster and unlock them if they are managed by datalad
+- have your data on the cluster and unlock them if they are managed by datalad (for MRIqc v24.0.2 data should not need to be unlocked)
 - install datalad on your user (see [here](https://github.com/cpp-lln-lab/CPP_HPC/install_datalad))
 - get the fmriprep singularity image as follow:
 
-here the example is with `MRIqc version 24.0.0` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
+here the example is with `MRIqc version 24.0.2` but check for newer version, list of fmriprep version available [here](https://hub.docker.com/r/nipreps/fmriprep/tags/)
 
 ```bash
 datalad install https://github.com/ReproNim/containers.git
 
 cd containers
 
-datalad get images/bids/bids-mriqc--24.0.0.sing
+datalad get images/bids/bids-mriqc--24.0.2.sif
 ```
 
 In case you have installe the repo a while a ago and you want to use a new version of fmriprep., update the `containers` repo via:
@@ -115,6 +115,16 @@ sbatch cpp_mriqc_group.slurm
 ```
 
 ## TIPS
+
+### Troubleshooting
+
+- ERROR: `OSError: [Errno 30] Read-only file system: '/home/mriqc/.cache'`
+
+add this flag to the singulairy inputs 
+
+```bash
+    -B "$HOME/tools/containers/images/bids":/home/mriqc \
+```
 
 ### check your job
 
