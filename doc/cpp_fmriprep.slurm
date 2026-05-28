@@ -17,7 +17,7 @@
 #export OMP_NUM_THREADS=4
 #export MKL_NUM_THREADS=4
 
-## CPP frmiprep script for CECI cluster v0.3.0
+## CPP frmiprep script for CECI cluster v0.4.0
 #
 # writtent by CPP people
 #
