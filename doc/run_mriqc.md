@@ -1,4 +1,4 @@
-# WIP# Run MRIqc on the cluster
+# Run MRIqc on the cluster
 
 Written by CPP lab people
 
@@ -39,20 +39,20 @@ cd path/to/containers
 datald update --merge
 ``````
 
-Depending on the cluster “unlock” is needed or not. No need for `lemaitre4`.
+Depending on the cluster, “unlock” is needed or not. No need for `lemaitre4`.
 
 ```bash
 datalad unlock containers/images/bids/bids-mriqc--24.0.0.sing
 ```
 
-## Submit a MRIqc job via a `slurm` script
+## Submit an MRIqc job via a `slurm` script
 
 - pros:
-    - easy to run for multiple subject
+    - easy to run for multiple subjects
 - cons:
     - the `slurm` script can be hard to edit from within the cluster in case of error or a change of mind with fmriprep
     options. You can edit via `vim` or locally and then
-    uploading a newversion.
+    uploading a new version.
 
 ### Participants level
 
@@ -60,9 +60,9 @@ Content of the `cpp_mriqc.slurm` file (download and edit from [here](cpp_mriqc.s
 
 !!! Warning
 
-    1. Read the MRIqc documentation to know what you are doing and how the arguments of the run call effects the results
-    2. All the paths and email are set afte Marco's users for demosntration. Change them for your user.
-    3. Edit the scripts with the info you need to make it run for your user from top to buttom of the script, do not over look the first "commented" chunk cause it is not a real commented section (check the email and job report path, data paths and the `username` etc.).
+    1. Read the MRIqc documentation to know what you are doing and how the arguments of the run call affect the results
+    2. All the paths and email are set after Marco's users for demonstration. Change them for your user.
+    3. Edit the scripts with the info you need to make it run for your user from top to bottom of the script; do not overlook the first "commented" chunk cause it is not a real commented section (check the email and job report path, data paths, and the `username` etc.).
 
 ```bash
 {% include "cpp_mriqc.slurm" %}
@@ -94,9 +94,9 @@ Content of the `cpp_mriqc_group.slurm` file (download and edit from [here](cpp_m
 
 !!! Warning
 
-    1. Read the MRIqc documentation to know what you are doing and how the arguments of the run call effects the results
-    2. All the paths and email are set afte Marco's users for demosntration. Change them for your user.
-    3. Edit the scripts with the info you need to make it run for your user from top to buttom of the script, do not over look the first "commented" chunk cause it is not a real commented section (check the email and job report path, data paths and the `username` etc.).
+    1. Read the MRIqc documentation to know what you are doing and how the arguments of the run call affect the results
+    2. All the paths and email are set after Marco's users for demonstration. Change them for your user.
+    3. Edit the scripts with the info you need to make it run for your user from top to bottom of the script; do not overlook the first "commented" chunk cause it is not a real commented section (check the email and job report path, data paths and the `username` etc.).
 
 ```bash
 {% include "cpp_mriqc_group.slurm" %}
@@ -109,7 +109,7 @@ On the cluster prompt, submit the jobs as:
 
 # USAGE on cluster:
 
-# no need to priovide any input
+# no need to provide any input
 
 sbatch cpp_mriqc_group.slurm
 ```
@@ -120,14 +120,14 @@ sbatch cpp_mriqc_group.slurm
 
 - ERROR: `OSError: [Errno 30] Read-only file system: '/home/mriqc/.cache'`
 
-add this flag to the singulairy inputs 
+add this flag to the singularity inputs 
 
 ```bash
     -B "$HOME/tools/containers/images/bids":/home/mriqc \
 ```
 
-### check your job
+### Check your job
 
 see [here](https://github.com/cpp-lln-lab.github.io/CPP_HPC/cluster_code_snippets/#check-your-running-jobs)
 
-To contribute see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
+To contribute, see [here](https://cpp-lln-lab.github.io/CPP_HPC/contributing/)
